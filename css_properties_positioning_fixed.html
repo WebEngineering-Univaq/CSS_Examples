@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS: fixed positioning</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            .blocco {border: 2px solid black; width: 50% }
+
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1 class="sezione">Posizionamento fixed</h1>
+
+        <h2 class="sezione" >Situazione normale (posizionamento statico)</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: red; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+
+                </div><div class="sorgente">
+                </div></div>
+        </div>
+
+        <h2 class="sezione">Posizionamento fixed relativo al documento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: yellow;  position:fixed; top: 30px; left: 230px;">
+                            fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: yellow;  position:fixed; top: 30px; left: 230px;"&gt;
+                        fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
+                        &lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento fixed, in 
+                            realtà, è sempre relativo al viewport, quindi questo blocco giallo sarà fissato 
+                            alle coordinate 230,30 rispetto alla finestra del browser--&gt;</span></p>
+
+
+                </div></div>
+        </div>
+
+        <h2 class="sezione">Posizionamento fixed relativo a un altro elemento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore" style="position:relative">
+                        <div class="blocco" style="background: magenta; position:relative">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+
+
+                            <div class="blocco" style="background: red; position:fixed; top: 50px; left: 250px;">
+                                fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
+                            </div>
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: magenta; position:relative"&gt;
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1</p>
+
+
+                    <p>&lt;div class="blocco" style="background: red; position:fixed; top: 50px; left: 250px;"&gt;
+                        fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
+                        &lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento fixed, in 
+                            realtà, è sempre relativo al viewport, quindi questo blocco rosso sarà fissato 
+                            alle coordinate 250,50 rispetto alla finestra del browser--&gt;</span></p>
+                    <p>&lt;/div&gt;</p>
+
+                </div></div></div>
+    </body>
+</html>

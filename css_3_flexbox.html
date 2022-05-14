@@ -1,0 +1,488 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS Flexbox</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+
+
+            .container {
+                background: lightgrey;
+                margin:10px; 
+                border: 1px solid black;
+            }
+
+            .item {
+                background:blue; color: white;
+                border: 1px solid black;
+                margin: 5px; padding: 5px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1 class="sezione">CSS Flexbox</h1>
+
+
+        <div class="esempi">
+
+
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container">
+                        <div class="item">Item1 </div> 
+                        <div class="item">Item2 </div>
+                    </div>
+
+                    <div class="container" style=" display:flex">
+                        <div class="item">Item1 </div> 
+                        <div class="item">Item2 </div>
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+                    <p>&lt;div class=&quot;container&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item1 &lt;/div&gt; 
+                        &lt;div class=&quot;item&quot;&gt;Item2 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item1 &lt;/div&gt; 
+                        &lt;div class=&quot;item&quot;&gt;Item2 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: direction</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+                    <h3>column</h3>
+
+                    <div class="container" style=" display:flex; flex-direction: column">
+                        <div class="item">Item1 </div> 
+                        <div class="item">Item2 </div>
+                    </div>
+
+                    <h3>row-reverse</h3>
+
+                    <div class="container" style=" display:flex; flex-direction: row-reverse">
+                        <div class="item">Item1 </div> 
+                        <div class="item">Item2 </div>
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; flex-direction: column&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item1 &lt;/div&gt; 
+                        &lt;div class=&quot;item&quot;&gt;Item2 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; flex-direction: row-reverse&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item1 &lt;/div&gt; 
+                        &lt;div class=&quot;item&quot;&gt;Item2 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: wrap</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+					<h3>nowrap (default)</h3>
+
+                    <div class="container" style=" flex-wrap: nowrap; display:flex; width: 300px">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>  
+                    </div>
+
+                    <h3>wrap</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>  
+                    </div>
+
+                    <h3>wrap-reverse</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap-reverse">
+                        <div class="item">Item 1</div><div class="item">Item 2 </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>  
+                    </div>
+
+                    <h3>wrap + column</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; height: 200px; flex-wrap: wrap; flex-direction: column">
+                        <div class="item">Item 1</div><div class="item">Item 2 </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>  
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+					<p>&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: nowrap&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;  
+                        &lt;/div&gt;
+                    </p>
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;  
+                        &lt;/div&gt;
+                    </p>
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap-reverse&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item 2&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;  
+                        &lt;/div&gt;
+                    </p>
+                    <p>	&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; height: 200px; flex-wrap: wrap; flex-direction: column&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item 2&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;  
+                        &lt;/div&gt;
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: justify-content</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <h3>center</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap; justify-content:center">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>flex-end</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap; justify-content:flex-end">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>space-between</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap; justify-content:space-between">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>space-around</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap; justify-content:space-around">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>space-evenly</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; flex-wrap: wrap; justify-content:space-evenly">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+                    <p>						&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap; justify-content:center&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+                    <p>						&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap; justify-content:flex-end&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+                    <p>						&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap; justify-content:space-between&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+                    <p>					&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap; justify-content:space-around&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;				</p>
+                    <p>					&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; flex-wrap: wrap; justify-content:space-evenly&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;				</p>
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: align-items</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <h3>center</h3>
+
+                    <div class="container" style=" display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:center">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>stretch</h3>
+
+                    <div class="container" style=" display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:stretch">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+                    <p>				&lt;div class=&quot;container&quot; style=&quot; display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:center&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;
+                    </p>
+                    <p>					&lt;div class=&quot;container&quot; style=&quot; display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:stretch&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: align-content</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <h3>center</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; height:200px; flex-wrap: wrap; align-content:center">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+
+                    <h3>space-evenly</h3>
+
+                    <div class="container" style=" display:flex; width: 300px; height:200px; flex-wrap: wrap; align-content:space-evenly">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item </div><div class="item">Item N</div>   
+                    </div>
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+
+                    <p>					&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; height:200px; flex-wrap: wrap; align-content:center&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+                    <p>						&lt;div class=&quot;container&quot; style=&quot; display:flex; width: 300px; height:200px; flex-wrap: wrap; align-content:space-evenly&quot;&gt;
+                        &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   
+                        &lt;/div&gt;					</p>
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: order</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+
+
+                    <div class="container" style=" display:flex; ">
+                        <div class="item" style=" order:2">Item 1(order=2)</div><div class="item" style=" order:1">Item 2(order=1)</div>       
+                    </div>
+
+                    <div class="container" style=" display:flex;  ">
+                        <div class="item" style=" order:2">Item 1(order=2)</div><div class="item" style=" order:1">Item 2(order=1)</div>   
+                        <div class="item" style=" ">Item 3</div>   
+                    </div>
+
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; &quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; order:2&quot;&gt;Item 1&lt;br/&gt;(order=2)&lt;/div&gt;</p><p>	&lt;div class=&quot;item&quot; style=&quot; order:1&quot;&gt;Item 2&lt;br/&gt;(order=1)&lt;/div&gt;       </p>
+                    <p>					&lt;/div&gt;</p>
+                    <p>					&lt;div class=&quot;container&quot; style=&quot; display:flex; &quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; order:2&quot;&gt;Item 1&lt;br/&gt;(order=2)&lt;/div&gt;</p><p>	&lt;div class=&quot;item&quot; style=&quot; order:1&quot;&gt;Item 2&lt;br/&gt;(order=1)&lt;/div&gt;</p>
+                    <p>	   				&lt;div class=&quot;item&quot; style=&quot; &quot;&gt;Item 3&lt;/div&gt;   </p>
+                    <p>					&lt;/div&gt;</p>
+
+
+
+                </div>
+
+            </div>
+        </div>
+		
+		<h2 class="sezione">Floxbox: flex-basis</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <div class="container" style=" display:flex;  ">
+                        <div class="item" style="  flex-basis: 50px">Item 1</div>
+						<div class="item" style=" flex-shrink:1 ; flex-basis: 50px">Item 2</div>   
+                        <div class="item" style="  flex-basis: 50px ">Item 2</div>   
+                        <div class="item" style="  flex-basis: 100px ">Item 3</div>  
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; &quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 50px&quot;&gt;Item 1&lt;/div&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 50px&quot;&gt;Item 2&lt;/div&gt;   </p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 50px &quot;&gt;Item 2&lt;/div&gt;   </p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 100px &quot;&gt;Item 3&lt;/div&gt;  </p>
+                    <p>					&lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+		
+        <h2 class="sezione">Floxbox: flex-grow</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <div class="container" style=" display:flex;  ">
+                        <div class="item" style="flex-basis: 50px; flex-grow:1">Item 1(grow=1)</div>						
+						<div class="item" style="flex-basis: 50px; flex-grow:1 ">Item 2(grow=1)</div>   
+
+                    </div>
+
+                    <div class="container" style=" display:flex;  ">
+                        <div class="item" style="flex-basis: 50px; flex-grow:2">Item 1(grow=2)</div>
+						<div class="item" style="flex-basis: 50px; flex-grow:1 ">Item 2(grow=1)</div>   
+
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+
+
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; &quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 50px; flex-grow:1&quot;&gt;Item 1&lt;br/&gt;(grow=1)&lt;/div&gt;</p>
+					<p>	&lt;div class=&quot;item&quot; style=&quot;flex-basis: 50px; flex-grow:1 &quot;&gt;Item 2&lt;br/&gt;(grow=1)&lt;/div&gt;   </p>
+					<span class="commento"> Notare che i due item hanno più spazio della loro basis.</span>					
+                    <p>					&lt;/div&gt;</p>				
+                    <p>				&lt;div class=&quot;container&quot; style=&quot; display:flex;  &quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; flex-basis: 50px; flex-grow:2&quot;&gt;Item 1&lt;br/&gt;(grow=2)&lt;/div&gt;</p>
+					<p>	&lt;div class=&quot;item&quot; style=&quot;flex-basis: 50px; flex-grow:1 &quot;&gt;Item 2&lt;br/&gt;(grow=1)&lt;/div&gt;   </p>
+                    <p>					&lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Floxbox: flex-shrink</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <div class="container" style=" display:flex;  ">
+                        <div class="item" style=" flex-basis:500px; flex-shrink:2">Item 1 (shrink=2)</div>
+						<div class="item" style=" flex-basis:500px; flex-shrink:1 ">Item 2 (shrink=1)</div>   
+
+
+                    </div>
+
+                </div>
+
+                <div class="sorgente">
+
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex;  &quot;&gt;</p>
+                    <p>	&lt;div class=&quot;item&quot; style=&quot; flex-basis:500px; flex-shrink:2&quot;&gt;Item 1&lt;br/&gt;(shrink=2)&lt;/div&gt;</p>
+					<p>&lt;div class=&quot;item&quot; style=&quot; flex-basis:500px; flex-shrink:1 &quot;&gt;Item 2&lt;br/&gt;(shrink=1)&lt;/div&gt;   </p>
+					<span class="commento"> Notare che i due item non hanno abbastanza spazio per soddisfare la loro basis.</span>
+                    <p>	&lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        
+        <h2 class="sezione">Floxbox: align-self</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+
+                <div class="rendering">
+
+                    <div class="container" style=" display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:stretch">
+                        <div class="item">Item 1</div><div class="item">Item </div><div class="item" style=" align-self:center">Item(center) </div><div class="item">Item N</div>   
+                    </div>
+
+
+                </div>
+
+                <div class="sorgente">
+
+
+                    <p>&lt;div class=&quot;container&quot; style=&quot; display:flex; height: 200px; width: 300px; flex-wrap: wrap; align-items:stretch&quot;&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot;&gt;Item &lt;/div&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot; style=&quot; align-self:center&quot;&gt;Item&lt;br/&gt;(center) &lt;/div&gt;</p>
+                    <p>						&lt;div class=&quot;item&quot;&gt;Item N&lt;/div&gt;   </p>
+                    <p>					&lt;/div&gt;</p>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </body>
+</html>

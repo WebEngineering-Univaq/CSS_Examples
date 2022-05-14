@@ -1,0 +1,275 @@
+<!doctype html>
+
+<html >
+    <head>
+        <title>CSS color and font properties</title>
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            #contenitore {
+                font-family: Verdana, Arial, Helvetica;
+                font-size: 24pt;
+
+                background-color: red;
+                color: white;
+            }
+
+            #elemento {
+                background-color: blue; 
+                border: 5px solid yellow;
+            }
+
+            #elemento:hover {
+                background-color: yellow;
+                font-size: 200%;		
+            }
+
+            .bordato {
+                border-width: 2px;
+                border-top-style: solid;
+                border-bottom-style: dashed;
+                border-right: 5px dotted red;
+            }
+
+            .doubleline {
+                line-height: 200%;
+            }
+
+            .nicebackground1 {
+                background-image: url('big_info_2.gif');			
+            }
+
+            .nicebackground2 {
+                background-image: url('big_info_2.gif');			
+                background-repeat: repeat-x;
+            }
+
+
+            .nicebackground3 {
+                background-image: url('big_info_2.gif');			
+                background-repeat: no-repeat;
+                background-position: right bottom;
+            }
+
+            ul li {
+                font-weight: bold;		
+            }
+
+            ul li li {
+                text-decoration: underline;		
+                font-style: italic;
+                font-weight: normal;	
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+
+
+        <h1 >Uso delle proprietà font, border, color e background</h1>
+
+        <div class="esempi">
+
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div id="contenitore">
+
+                        <div id="elemento">	bla bla bla bla bla bla ...						</div>bla bla bla bla bla bla ...			</div>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div id=&quot;contenitore&quot;&gt; </p>
+
+                    <p>&lt;div id=&quot;elemento&quot;&gt;	bla bla bla bla bla bla ...	&lt;/div&gt;</p>
+
+                    <p>bla bla bla bla bla bla ...</p>
+                    <p>&lt;/div&gt;</p>
+
+
+                    <h3>CSS</h3>
+
+                    <p>#contenitore {
+                        font-family: Verdana, Arial, Helvetica;
+                        font-size: 24pt;
+                        background-color: red;
+                        color: white;
+                        }
+                    </p>
+                    <p>#elemento {
+                        background-color: blue; 
+                        border: 5px solid yellow;
+                        }
+                    </p>
+                    <p>#elemento:hover {
+                        background-color: yellow;
+                        font-size: 200%;		
+                        }<span class="commento"> questo esempio di animazione CSS potrebbe non funzionare in alcuni borwser, per in noto bug della pseudoclasse :hover </span>			</p>
+                </div>
+            </div>
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="bordato">
+                        bla bla bla bla bla bla ...
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+
+                    <p>&lt;div class=&quot;bordato&quot;&gt;
+                        bla bla bla bla bla bla ...
+                        &lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+
+                    <p>.bordato {
+                        border-width: 2px;
+                        border-top-style: solid;
+                        border-bottom-style: dashed;
+                        border-right: 5px dotted red;
+                        }<span class="commento"> Gli elementi di classe bordato hanno un bordo composito dichiarato usando una combinazione delle proprietà 
+                            border </span>
+                    </p>
+
+
+                </div>
+            </div>
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <p>bla bla bla bla bla bla ...<br/>bla bla bla bla bla bla ...</p>
+                    <p class="doubleline">bla bla bla bla bla bla ...<br/>bla bla bla bla bla bla ...</p>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+
+                    <p>&lt;p&gt;bla bla bla bla bla bla ...&lt;br/&gt;bla bla bla bla bla bla ...&lt;/p&gt;</p>
+                    <p>&lt;p class=&quot;doubleline&quot;&gt;bla bla bla bla bla bla ...&lt;br/&gt;bla bla bla bla bla bla ...&lt;/p&gt;</p>
+
+
+                    <h3>CSS</h3>
+
+                    <p>.doubleline {
+                        line-height: 200%;
+                        }</p>
+
+                </div>
+            </div>
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <ul>
+                        <li>aaaaaa</li>
+                        <li>bbbbbb</li>
+                        <li>
+                            <ul>
+                                <li>cccccc</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;ul&gt;
+                        &lt;li&gt;aaaaaa&lt;/li&gt;
+                        &lt;li&gt;bbbbbb&lt;/li&gt;</p>
+                    <p>&lt;li&gt;&lt;ul&gt;&lt;li&gt;cccccc&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;</p>
+                    <p>&lt;/ul&gt;</p>
+
+                    <h3>CSS</h3>
+
+                    <p>ul li {
+                        font-weight: bold;		
+                        }</p>
+
+                    <p>ul li li {
+                        text-decoration: underline;		
+                        font-style: italic;
+                        font-weight: normal;	
+                        }<span class="commento"> Gli elementi delle liste di livello superiore al primo hanno formattazione diversa </span>
+                    </p>
+
+
+                </div>
+            </div>
+
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="nicebackground1">
+                        <p>bla bla bla bla bla bla ...<br/>bla bla bla bla bla bla ...</p>
+                    </div>
+
+                    <div class="nicebackground2">
+                        <p>bla bla bla bla bla bla ...<br/>bla bla bla bla bla bla ...</p>
+                    </div>
+
+                    <div class="nicebackground3">
+                        <p>bla bla bla bla bla bla ...<br/>bla bla bla bla bla bla ...</p>
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;nicebackground1&quot;&gt;
+                        &lt;p&gt;bla bla bla bla bla bla ...&lt;br/&gt;bla bla bla bla bla bla ...&lt;/p&gt;
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class=&quot;nicebackground2&quot;&gt;
+                        &lt;p&gt;bla bla bla bla bla bla ...&lt;br/&gt;bla bla bla bla bla bla ...&lt;/p&gt;
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class=&quot;nicebackground3&quot;&gt;
+                        &lt;p&gt;bla bla bla bla bla bla ...&lt;br/&gt;bla bla bla bla bla bla ...&lt;/p&gt;
+                        &lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+
+                    <p>.nicebackground1 {
+                        background-image: url('big_info_2.gif');			
+                        }<span class="commento"> La url passata in questo esempio assume che il file sia nella stessa directory del foglio di stile </span>
+                    </p>
+
+                    <p>.nicebackground2 {
+                        background-image: url('big_info_2.gif');			
+                        background-repeat: repeat-x;
+                        }</p>
+
+
+                    <p>.nicebackground3 {
+                        background-image: url('big_info_2.gif');			
+                        background-repeat: no-repeat;
+                        background-position: right bottom;
+                        }<span class="commento"> In questo caso l'immagine di fondo è posiozionata un basso a destra nel contenitore</span>
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

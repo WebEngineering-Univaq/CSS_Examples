@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html >
+    <head>
+        <title>CSS inclusion rules: media types</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <link rel="stylesheet" media="all" type="text/css" href="main.css"/>
+        <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
+        <link rel="stylesheet" media="print" type="text/css" href="print.css"/>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1 class="sezione">Inclusione di CSS e media types</h1>
+        <p class="sezione">In questo esempio, la pagina HTML carica tre fogli di 
+            stile diversi. </p>
+        <ul>
+            <li>
+                <p class="sezione">Il primo (main.css) definisce delle proprietà 
+                    comuni (in questo caso la dimensione del carattere), ed è sempre 
+                    attivo.</p></li>
+            <li>
+                <p class="sezione">Il secondo (screen.css) è un foglio di stile usato 
+                    solo quando il <i>media</i> di visualizzazione è uno schermo, e 
+                    determina il colore di fondo rosso per il testo nei paragrafi di 
+                    classe1. </p></li>
+            <li>
+                <p class="sezione">Il terzo foglio di stile (print.css) è un foglio di 
+                    stile usato solo quando il <i>media</i> di visualizzazione è una 
+                    stampante. In altre parole, print.css sostituisce screen.css quando la 
+                    pagina viene stampata. In questo caso, il foglio di stile per la stampa 
+                    si limita a colorare di blu lo sfondo dei paragrafi di classe1. Potete 
+                    provare l'effetto semplicemente aprendo una anteprima di stampa di 
+                    questa pagina.</p></li>
+        </ul>
+        <p class="sezione">L'uso di un foglio di stile alternativo per la stampa è una 
+            tecnica molto comune e di grande utilità. In un foglio di stile per la stampa è 
+            possibile, ad esempio, ridefinire le proprietà di stile per <b>eliminare colori 
+                di sfondo e immagini che appesantirebbero inutilmente la stampa</b>, o <b>
+                eliminare intere parti delle pagine</b> (ad esempio i menu), per fare spazio ai 
+            contenuti, che sono l'unico oggetto utile in una stampa. Le proprietà utili ad 
+            ottenere questi effetti saranno illustrare più avanti.</p>
+
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="classe1">
+                        <p>Testo in paragrafo nidificato in un div di classe1</p>
+                    </div>
+
+
+                </div><div class="sorgente">
+                    <h3>Head HTML</h3>		
+                    <p>&lt;link rel="stylesheet" media="all" type="text/css" href="main.css"/&gt;</p>
+                    <p>&lt;link rel="stylesheet" media="screen" type="text/css" href="screen.css"/&gt;</p>
+                    <p>&lt;link rel="stylesheet" media="print" type="text/css" href="print.css"/&gt;</p>
+                    <h3>main.css</h3>
+                    <p>div.classe1 {font-size: 50px;}</p>
+                    <h3>screen.css</h3>
+                    <p>.classe1 {background-color: red}</p>
+                    <h3>print.css</h3>
+                    <p>.classe1 {color: blue}</p>
+
+                </div></div>
+        </div>
+
+
+
+    </body>
+</html>

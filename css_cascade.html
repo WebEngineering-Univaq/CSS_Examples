@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS cascade rules</title>
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+        <meta charset="utf-8"/>
+
+        <style type="text/css">
+
+            .classe1 {background-color: red}
+            p.classe1  {background-color: green}
+
+            b {background-color: yellow}
+
+            #pippo, #pluto, #topolino {background-color: purple}
+            #paperino {background-color: cyan !important}
+
+            .classe4 {background-color: grey !important}
+            .classe2 {background-color: grey}
+            .classe3 {background-color: magenta}
+        </style>
+    </head>
+    <body>
+
+        <h1 class="sezione">Cascading ed Ereditarietà: valori degli attributi CSS</h1>
+
+        <div class="esempi">
+           
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="classe1"><p>1) Testo in paragrafo nidificato in un div di classe1</p></div>
+                    <p class="classe1">2) Testo in un paragrafo di classe1.<br />
+                        <i>3) Il tag i eredita il background dal paragrafo in cui è posto.</i>
+                        <br />
+                        <b>4) Mentre il tag b ha una regola specifica che ne determina la sfondo.</b>
+                        <br />
+                        <b id="pippo">5) Se però c'è un selettore più specifico, ad esempio con un ID, questo avrà la meglio nella cascata.</b>
+                        <br />
+                        <span id="pluto" style="background-color: olive">6) Tuttavia l'attributo style ha sempre specificità massima.</span>
+                        <br />
+                        <span id="paperino" style="background-color: olive">7) Ma possiamo ignorarlo dando più priorità di origine alla regola con un !important</span>
+                        <br />
+                        <span class="classe2 classe3">8) Infine, se abbiamo due proprietà con la stessa origine e specificità, vince quella che è scritto per ultima nel foglio di stile</span>
+                        <br />
+                        <span id="topolino1" class="classe1 classe2 classe3">9) Chi vincerà?</span>
+                        <br />
+                        <span id="topolino2" class="classe1 classe2 classe3" style="background-color: olive">10) E ora?</span>
+                        <br />
+                        <span id="topolino3" class="classe1 classe2 classe3 classe4" style="background-color: olive">11) E in questo caso?</span>
+                    </p>
+
+                </div><div class="sorgente">
+                    <h3>CSS</h3>
+
+                    <p>	.classe1 {background-color: red}</p>
+                    <p>	p.classe1  {background-color: green}</p>
+
+                    <p>	b {background-color: yellow}</p>
+
+                    <p>	#pippo, #pluto, #topolino {background-color: purple}</p>
+                    <p>	#paperino {background-color: cyan !important}</p>
+
+                    <p>	.classe4 {background-color: grey !important}</p>
+                    <p>	.classe2 {background-color: grey}</p>
+                    <p>	.classe3 {background-color: magenta}</p>
+
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class="classe1"&gt;&lt;p&gt;1) Testo in paragrafo nidificato in un div di classe1&lt;/p&gt;&lt;/div&gt;</p>
+                    <p>&lt;p class="classe1"&gt;2) Testo in un paragrafo di classe1.&lt;br /&gt;</p>
+                    <p>&lt;i&gt;3) Il tag i eredita il background dal paragrafo in cui è posto.&lt;/i&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;b&gt;4) Mentre il tag b ha una regola specifica che ne determina la sfondo.&lt;/b&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;b id="pippo"&gt;5) Se però c'è un selettore più specifico, ad esempio con un ID, questo avrà la meglio nella cascata.&lt;/b&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span id="pluto" style="background-color: olive"&gt;6) Tuttavia l'attributo style ha sempre specificità massima.&lt;/span&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span id="paperino" style="background-color: olive"&gt;7) Ma possiamo ignorarlo dando più priorità di origine alla regola con un !important&lt;/span&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span class="classe2 classe3"&gt;8) Infine, se abbiamo due proprietà con la stessa origine e specificità, vince quella che è scritto per ultima nel foglio di stile&lt;/span&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span id="topolino1" class="classe1 classe2 classe3"&gt;9) Chi vincerà?&lt;/span&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span id="topolino2" class="classe1 classe2 classe3" style="background-color: olive"&gt;10) E ora?&lt;/span&gt;
+                        &lt;br /&gt;</p>
+                    <p>&lt;span id="topolino3" class="classe1 classe2 classe3 classe4" style="background-color: olive"&gt;11) E in questo caso?&lt;/span&gt;
+                        &lt;/p&gt;</p>
+
+                </div></div>
+        </div>
+
+
+
+    </body>
+</html>

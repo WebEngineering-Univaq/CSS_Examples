@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html >
+
+    <head>
+        <title>CSS3: animazioni</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            @keyframes animation1-frames {
+                from {background: red; left: 10px; top: 15px; }
+                to {background: yellow; left: 150px; top: 50px; }
+            }
+
+            @-moz-keyframes animation1-frames {
+                from {background: red; left: 10px; top: 15px; }
+                to {background: yellow; left: 150px; top: 50px; }
+            }
+
+            @-webkit-keyframes animation1-frames {
+                from {background: red; left: 10px; top: 15px; }
+                to {background: yellow; left: 150px; top: 50px; }
+            }
+
+            @-o-keyframes animation1-frames {
+                from {background: red; left: 10px; top: 15px; }
+                to {background: yellow; left: 150px; top: 50px; }
+            } 
+
+            .animation1-holder, .animation2-holder {
+                position: relative;
+                width: 300px;
+                height: 200px;
+                border: 1px solid black;
+            }
+
+            .animation1	{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                animation: animation1-frames 2s linear 1s infinite alternate;
+                -moz-animation: animation1-frames 2s linear 1s infinite alternate;
+                -webkit-animation: animation1-frames 2s linear 1s infinite alternate;
+                -o-animation: animation1-frames 2s linear 1s infinite alternate;
+            } 
+
+
+            @keyframes animation2-frames {
+                0% {background: red; left: 10px; top: 15px; }
+                30% {background: blue; left: 50px; top: 150px; }
+                60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+            }
+
+            @-moz-keyframes animation2-frames {
+                0% {background: red; left: 10px; top: 15px; }
+                30% {background: blue; left: 50px; top: 150px; }
+                60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+            }
+
+            @-webkit-keyframes animation2-frames {
+                0% {background: red; left: 10px; top: 15px; }
+                30% {background: blue; left: 50px; top: 150px; }
+                60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+
+            }
+
+            @-o-keyframes animation2-frames {
+                0% {background: red; left: 10px; top: 15px; }
+                30% {background: blue; left: 50px; top: 150px; }
+                60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+            } 
+
+            .animation2	{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                animation: animation2-frames 5s linear 2s 1 normal forwards;
+                -moz-animation: animation2-frames 5s linear 2s 1 normal forwards;
+                -webkit-animation: animation2-frames 5s linear 2s 1 normal forwards;
+                -o-animation: animation2-frames 55s linear 2s 1 normal forwards;
+            } 
+
+
+
+        </style>
+
+    </head>
+    <body>
+        <h1 class="sezione">CSS3: animazioni</h1>
+
+        <p>Le animazioni CSS permettono di definire dei percorsi di animazione per elementi della
+            pagina HTML. Ciascun percorso &egrave; costituito da due o pi&ugrave; <i>frames</i>, in ciascuno dei
+            quali lo stile dell'elemento pu&ograve; essere modificato.</p>
+
+
+        <p>Le animazioni CSS non sono ancora supportate da tutti i browser allo stesso modo.
+            Per Opera, Safari, Firefox e Chrome sono disponibili estenzioni specifiche con la stessa sintassi, mentre
+            internet explorer non ha alcun supporto.</p>
+
+
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+
+
+                    <div class="animation1-holder">
+                        <p>bla, bla, bla, bla, bla, bla, bla</p>
+                        <div class="animation1">&nbsp;</div>	
+                        <p>bla, bla, bla, bla, bla, bla, bla</p>
+                    </div>
+
+
+
+                </div><div class="sorgente">
+
+                    <h3>CSS</h3>
+
+                    <p>			@keyframes animation1-frames {
+                        from {background: red; left: 10px; top: 15px; }
+                        to {background: yellow; left: 150px; top: 50px; }
+                        }	</p>
+                    <p>	@-moz-keyframes animation1-frames {
+                        from {background: red; left: 10px; top: 15px; }
+                        to {background: yellow; left: 150px; top: 50px; }
+                        }</p>
+                    <p>		@-webkit-keyframes animation1-frames {
+                        from {background: red; left: 10px; top: 15px; }
+                        to {background: yellow; left: 150px; top: 50px; }
+                        }	</p>
+                    <p>		@-o-keyframes animation1-frames {
+                        from {background: red; left: 10px; top: 15px; }
+                        to {background: yellow; left: 150px; top: 50px; }
+                        } </p>
+                    <p>	.animation1-holder {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border: 1px solid black;
+                        }</p>
+                    <p>	.animation1	{
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        animation: animation1-frames 2s linear 1s infinite alternate;
+                        -moz-animation: animation1-frames 2s linear 1s infinite alternate;
+                        -webkit-animation: animation1-frames 2s linear 1s infinite alternate;
+                        -o-animation: animation1-frames 2s linear 1s infinite alternate;
+                        } 	</p>
+                    <h3>HTML</h3>
+
+                    <p>		&lt;div class=&quot;animation1-holder&quot;&gt;
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+                        &lt;div class=&quot;animation1&quot;&gt;&amp;nbsp;&lt;/div&gt;	
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+                        &lt;/div&gt;</p>
+                </div></div>
+
+
+            <div class="esempio"><div class="rendering">
+
+
+                    <div class="animation2-holder">
+                        <p>bla, bla, bla, bla, bla, bla, bla</p>
+                        <div class="animation2">&nbsp;</div>	
+                        <p>bla, bla, bla, bla, bla, bla, bla</p>
+                    </div>
+
+
+                </div><div class="sorgente">
+
+                    <h3>CSS</h3>
+
+                    <p>		@keyframes animation2-frames {
+                        0% {background: red; left: 10px; top: 15px; }
+                        30% {background: blue; left: 50px; top: 150px; }
+                        60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                        100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+                        }</p>
+                    <p>		@-moz-keyframes animation2-frames {
+                        0% {background: red; left: 10px; top: 15px; }
+                        30% {background: blue; left: 50px; top: 150px; }
+                        60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                        100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+                        }</p>
+                    <p>		@-webkit-keyframes animation2-frames {
+                        0% {background: red; left: 10px; top: 15px; }
+                        30% {background: blue; left: 50px; top: 150px; }
+                        60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                        100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+                        }</p>
+                    <p>		@-o-keyframes animation2-frames {
+                        0% {background: red; left: 10px; top: 15px; }
+                        30% {background: blue; left: 50px; top: 150px; }
+                        60% {background: magenta; left: 70px; top: 100px; width: 50px; }
+                        100% {background: yellow; left: 150px; top: 50px; height: 50px; }
+                        } 		</p>
+
+
+                    <p>		.animation2-holder {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border: 1px solid black;
+                        }		</p>
+                    <p>			.animation2	{
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        animation: animation2-frames 5s linear 2s 1 normal forwards;
+                        -moz-animation: animation2-frames 5s linear 2s 1 normal forwards;
+                        -webkit-animation: animation2-frames 5s linear 2s 1 normal forwards;
+                        -o-animation: animation2-frames 55s linear 2s 1 normal forwards;
+                        } 		</p>
+
+                    <h3>HTML</h3>
+                    <p>					&lt;div class=&quot;animation2-holder&quot;&gt;
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+                        &lt;div class=&quot;animation2&quot;&gt;&amp;nbsp;&lt;/div&gt;	
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html >
+    <head>
+        <title>Layout di base: responsive a 3 colonne con gliglia (grid)</title>	
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+		<link rel="stylesheet" href="layouts.css" type="text/css"/>
+		<meta charset="UTF-8"> 
+
+		<style type="text/css">
+		
+			.container {
+				width: 96%; padding: 0; margin: 1% 2% 1% 2%;
+				display: grid;
+				grid-template-columns: 18% auto 18%;
+				grid-template-rows: 50px auto 30px;
+				grid-column-gap: 2%;
+				grid-row-gap: 10px;	
+				grid-template-areas: "header header header" "left body right" "footer footer footer";
+			}
+			
+			.formcontainer {
+				width: 98%; padding: 0; margin: 1% 1% 1% 1%;
+				display: grid;
+				grid-template-columns: 25% auto ;
+				grid-auto-rows: auto;
+				grid-column-gap: 1%;
+				grid-row-gap: 5px;	
+				justify-items: start;
+			}
+			
+			@media only screen and (min-width: 768px) and (max-width: 959px) {
+				.container {
+					width: 98%; 
+					margin: 0 1% 0 1%; 
+					grid-row-gap: 2px;
+				}
+			}
+
+			@media only screen and (max-width: 767px) {
+				.container { 
+					width: 300px; 
+					display: block; 
+					margin: 1% auto; 
+				}        
+			}
+		
+		
+			body,html,p {
+				padding:0; 
+				margin:0;
+			}
+
+			.header { height: 50px; grid-area: header}
+			.footer { height: 30px;  grid-area: footer}
+			.left  { grid-area: left}
+			.body  { grid-area: body}
+			.right  { grid-area: right}
+
+			#smallmenu {display: none;}
+			#menu {display: block;}
+			.form  > .row {border-bottom: 1px dotted #DDD; text-align: left;}
+				
+			@media only screen and (min-width: 768px) and (max-width: 959px) {
+				.left,.right {font-size: 9pt;}
+			}
+
+			@media only screen and (max-width: 767px) {			
+				.right {display: none;}
+				#menu {display: none}
+				#smallmenu {display: block;}			
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body >
+	
+	<div class="container">
+		
+		<div class="header">Header</div>
+		
+		<div class="left">
+			<p>Left</p>
+			<p><select id="smallmenu">
+			<option>Menu1</option>
+			<option>Menu2</option>
+			<option>Menu3</option>
+			<option>Menu4</option>
+			</select></p>
+			<ul id="menu">
+			<li>Menu1</li>
+			<li>Menu2</li>
+			<li>Menu3</li>
+			<li>Menu4</li>
+			</ul>
+		</div>
+		
+		<div class="body">	
+			<p>Body</p>
+			<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+			
+			<div class="formcontainer">
+				<div ><b>Name</b></div>
+				<div >Donald</div>
+				<div ><b>Surname</b></div>
+				<div >Duck</div>
+			</div>
+						
+			<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>		
+		</div>
+	
+		
+		<div class="right">
+			<p>Right</p>
+			<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		</div>
+				
+		
+		<div class="footer">Footer</div>
+	
+		
+	</div>
+		
+	</body>
+</html>

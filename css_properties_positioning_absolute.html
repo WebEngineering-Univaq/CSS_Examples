@@ -1,0 +1,168 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS: absolute positioning</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+
+            .blocco {border: 2px solid black; width: 50% }		
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1 class="sezione">Posizionamento assoluto</h1>
+
+
+        <h2 class="sezione">Situazione normale (posizionamento statico)</h2>
+
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: red; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+                </div></div>
+        </div>
+
+        <h2 class="sezione">posizionamento assoluto relativo al documento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: red;  position:absolute; top: 50px; left: 250px;">
+                            absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: red;  position:absolute; top: 50px; left: 250px;"&gt;
+                        absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
+                        &lt;/div&gt;<span class="commento">&lt;!-- Il blocco rosso è posizionato alle                             coordinate 50,250 rispetto al documento, in quanto non ha contenitori che                             offrano riferimenti validi. --&gt;</span></p>
+
+                </div></div>
+        </div>
+
+        <h2 class="sezione">posizionamento assoluto relativo a un altro elemento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="blocco" style="background: magenta; ">
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                    </div>
+
+                    <div class="blocco" style="background: blue; position:relative;">
+                        relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 
+                        <div class="blocco" style="background: red;  position:absolute; top: 0px; left: 150px;">
+                            absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
+                        </div>
+                    </div>
+
+                    <div class="blocco" style="background: green; ">
+                        blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                    </div>
+
+                </div><div class="sorgente">
+
+
+                    <p>&lt;div class="blocco" style="position:relative;"&gt;
+                        relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 </p>
+                    <p>&lt;div class="blocco" style="background: red;  position:absolute; top: 0px; left: 150px;"&gt;
+                        absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
+                        &lt;/div&gt;</p>
+                    <p>&lt;/div&gt;<span class="commento">&lt;!-- In questo caso il blocco                             rosso è posizionato alle coordinate 150,0 rispetto al blocco blu che lo                             contiene e ha un posizionamento relativo (fittizio). --&gt;</span></p>
+
+                </div></div>
+
+
+            <div class="esempio"><div class="rendering">
+
+
+                    <div class="blocco" style="background: magenta; ">
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                    </div>
+
+                    <div class="blocco" style="background: blue; position:relative;">
+                        <div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;">abs</div>
+                        <div style="background: white;  margin-left: 40px; margin-top:5px;">blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo</div>
+                    </div>
+
+                    <div class="blocco" style="background: green; ">
+                        blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                    </div>
+
+                </div><div class="sorgente">
+
+                    <p><span class="commento">&lt;!-- In questo esempio mostriamo                             come creare due colonne in un contenitore. Il contenitore blu, posizionato                             in maniera relativa, ospita una colonna gialla e una bianca. Questo effetto                             è alla base della realizzazione di molti layout --&gt;</span></p>
+                    <p>&lt;div class="blocco" style="background: blue; position:relative;"&gt;</p>
+                    <p>&lt;div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo posizionamento è assoluto. --&gt;</span></p>
+                    <p>&lt;div style="background: white;  margin-left: 40px; margin-top:5px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna                             destra è libera, quindi si adatterà alla larghezza del contenitore.                            La colonna non è posizionata, ma i suoi margini impediscono che si                             sovrapponga alla colonna di sinistra. In questo modo, è possibile ottenere                             uno pseudo-posizionamento che lascia libera la div di estendersi fino ai                             margini del contenitore. --&gt;</span></p>
+                    <p>&lt;/div&gt;</p>
+
+                </div></div>
+
+
+            <div class="esempio"><div class="rendering">
+
+
+                    <div class="blocco" style="background: magenta; ">
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                    </div>
+
+                    <div class="blocco" style="background: blue; position:relative;">
+                        <div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;">abs</div>
+                        <div style="background: white; position:absolute; top: 5px; left: 40px; ">blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo</div>
+                    </div>
+
+                    <div class="blocco" style="background: green; ">
+                        blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                    </div>
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: blue; position:relative;"&gt;</p>
+                    <p>&lt;div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo posizionamento è assoluto. --&gt;</span></p>
+                    <p>&lt;div style="background: white; position:absolute; top: 5px; left: 40px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- La colonna                             destra ha ampiezza libera, ed è posizionata anch'essa in maniera assoluta, imitando la posizione ottenuta nell'esempio precedente col margine.                            In questo caso, però, l'effetto ottenuto NON è quello voluto! Infatti, poichè abbiamo posizionato entrambi gli elementi contenuti nel blocco blu,                            quest'ultimo è stato svuotato e si è "compresso", facendo scivolare in alto il blocco verde...	--&gt;</span></p>
+                    <p>&lt;/div&gt;</p>
+
+                </div></div>
+
+
+        </div>
+
+
+
+    </body>
+</html>

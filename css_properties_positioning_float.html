@@ -1,0 +1,400 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS: floats</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+
+            .blocco {border: 2px solid black; width: 50% }
+
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1 class="sezione">Floats</h1>
+
+
+        <h2 class="sezione">Floats e flusso del testo nel contenitore</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            <div class="blocco" style="background: yellow; width:20%; float:left;">
+                                float float float float float float float float float float 
+                                float float float float float float float float float float 
+                            </div>
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        </div>
+
+                        <div class="blocco" style="background: red; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: green; "&gt;
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 </p>
+                    <p>&lt;div class="blocco" style="background: yellow; width:20%; float:left;"&gt;
+                        float float float float float float float float float float 
+                        float float float float float float float float float float 
+                        &lt;/div&gt;<span class="commento">&lt;!-- il blocco float giallo si 
+                            dispone a partire dalla posizione iniziale, fuoriuscendo dal contenitore 
+                            ma senza nascondere il testo, che scorre intorno al suo bordo --&gt;</span></p>
+                    <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        &lt;/div&gt;</p>
+
+                </div></div>
+
+
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            <div class="blocco" style="background: yellow; float:right;">
+                                float float float float float float float float float float 
+                            </div>
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        </div>
+
+                        <div class="blocco" style="background: red; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+                    </div>
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: green; "&gt;
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 </p>
+                    <p>&lt;div class="blocco" style="background: yellow; float:right;"&gt;
+                        float float float float float float float float float float 
+                        &lt;/div&gt;<span class="commento">&lt;!-- il blocco float giallo si 
+                            dispone a partire dalla posizione iniziale sul bordo destro del suo contenitore --&gt;</span></p>
+                    <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 
+                        &lt;/div&gt;</p>
+
+                </div></div>
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: yellow; width:20%; float:left">
+                            float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                            float float float float float float float float 
+
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        </div>
+
+
+                        <div class="blocco" style="background: red; ">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+
+                        <div class="blocco" style="background: blue; ">
+                            blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4
+                        </div>
+                    </div>
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: magenta; "&gt;
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:20%; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        float float float float float float float float 
+                        &lt;/div&gt;<span class="commento">&lt;!-- in questo caso il blocco float giallo 
+                            è posto al di fuori degli altri contenitori, ma il suo comportamento è 
+                            simile ai casi precedenti --&gt;</span></p>
+
+                    <p>&lt;div class="blocco" style="background: green; "&gt;
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+
+        <h2 class="sezione">Floats e flusso del testo nel contenitore: proprietà clear</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: yellow; width:20%; float:left">
+                            float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        </div>
+
+
+                        <div class="blocco" style="background: red;  clear:left;">
+                            blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        </div>
+
+                        <div class="blocco" style="background: blue; ">
+                            blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4 blocco 4
+                        </div>
+                    </div>
+
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: magenta; "&gt;
+                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:20%; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: green; "&gt;
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        &lt;/div&gt;</p>
+
+
+                    <p>&lt;div class="blocco" style="background: red;  clear:left;"&gt;
+                        blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3 blocco 3
+                        &lt;/div&gt;<span class="commento">&lt;!-- la proprietà clear di questo 
+                            blocco ne provoca lo scorrimento oltre la fine del float sinistro --&gt;</span></p>
+
+
+
+                </div></div>
+        </div>
+
+        <h2 class="sezione">Stacking del floats</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: yellow; width:120px; float:left">
+                            float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        </div>
+
+                        <div class="blocco" style="background: cyan; width:120px; float:left">
+                            float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                        </div>
+
+                        <div class="blocco" style="background: green; ">
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        </div>
+                    </div>
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:120px; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: cyan; width:120px; float:left"&gt;
+                        float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                        &lt;/div&gt;<span class="commento">&lt;!-- due floats allineati sullo stesso 
+                            bordo si impilano: provate però a diminuire la dimensione della finestra, e 
+                            andranno a capo --&gt;</span></p>
+
+                    <p>&lt;div class="blocco" style="background: green; "&gt;
+                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        &lt;/div&gt;</p>
+
+
+                </div></div>
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: green; width:100%;">
+
+                            <div class="blocco" style="background: yellow; width:120px; float:left">
+                                float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                            </div>
+
+                            <div class="blocco" style="background: cyan; width:120px; float:right">
+                                float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                            </div>
+
+
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        </div>
+                    </div>
+
+
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: green; width:100%;"&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:120px; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        &lt;/div&gt;</p>
+
+
+
+                    <p>&lt;div class="blocco" style="background: cyan; width:120px; float:right"&gt;
+                        float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                        &lt;/div&gt;<span class="commento">&lt;!-- due float su bordi diversi si allineano senza andare a capo: infatti sono un sistema alternativo per creare layout a tre colonne --&gt;</span></p>
+
+
+                    <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+
+        <h2 class="sezione">Clearing dei Floats</h2>
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: green; width:100%;">
+
+                            <div class="blocco" style="background: yellow; width:120px; float:left">
+                                float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                            </div>
+
+                            <div class="blocco" style="background: cyan; width:120px; float:right">
+                                float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                            </div>
+
+
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+
+
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: green; width:100%;"&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:120px; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: cyan; width:120px; float:right"&gt;
+                        float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                        &lt;/div&gt;</p>
+
+                    <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2</p>
+
+                    <p>&lt;div style="clear: both"&gt;&lt;/div&gt;
+                        <span class="commento">&lt;!-- Questa div, che non contiene nulla, forza il contenitore blocco3 ad estendersi fino alla fine dei due float, in quanto richiede, con clear:both, di apparire DOPO i float --&gt;</span>	</p>
+
+                    <p>&lt;/div&gt;</p>
+
+                </div></div>
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contenitore">
+                        <div class="blocco" style="background: magenta; ">
+                            blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1
+                        </div>
+
+                        <div class="blocco" style="background: green; width:100%; overflow: hidden;">
+
+                            <div class="blocco" style="background: yellow; width:120px; float:left">
+                                float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                            </div>
+
+                            <div class="blocco" style="background: cyan; width:120px; float:right">
+                                float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                            </div>
+
+
+                            blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2
+
+                        </div>
+                    </div>
+
+
+
+                </div><div class="sorgente">
+
+                    <p>&lt;div class="blocco" style="background: green; width:100%; overflow: hidden;"&gt;
+                        <span class="commento">&lt;!-- Lo stesso effetto dell'esempio precedente si ottiene senza usare la div con il clear, ma semplicemente 
+                            impostando l'overflow su hidden sul contenutore dei float! --&gt;</span></p>
+
+                    <p>&lt;div class="blocco" style="background: yellow; width:120px; float:left"&gt;
+                        float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float float 
+                        &lt;/div&gt;</p>
+
+                    <p>&lt;div class="blocco" style="background: cyan; width:120px; float:right"&gt;
+                        float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 float 2 
+                        &lt;/div&gt;</p>
+
+                    <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2</p>
+
+                    <p>&lt;/div&gt;</p>
+
+                </div></div>		
+
+
+        </div>	
+
+
+
+    </body>
+</html>

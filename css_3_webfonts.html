@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html >
+
+    <head>
+        <title>CSS3: Web fonts</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'/>
+        <style type="text/css">
+
+            @font-face {
+                font-family: 'Tangerine';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Tangerine'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/HGfsyCL5WASpHOFnouG-RD8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+            }
+
+
+            @font-face {
+                font-family: 'Tangerine2';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Tangerine'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/HGfsyCL5WASpHOFnouG-RD8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+            }
+
+            @font-face {
+                font-family: 'Tangerine2';
+                font-style: normal;
+                font-weight: bold;
+                src: local('Tangerine Bold'), local('Tangerine-Bold'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/UkFsr-RwJB_d2l9fIWsx3nhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+            }
+
+            @font-face {
+                font-family: 'Aclonica';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Aclonica'), local('Aclonica-Regular'), url('https://themes.googleusercontent.com/static/fonts/aclonica/v3/VVH16EjBQLZ2NYB8eVnrO_esZW2xOQ-xsNqO47m55DA.woff') format('woff');
+            }
+
+
+            .google1 {
+                font-family: 'Tangerine',Times,serif;
+                font-size: 20pt;
+            }
+
+            .google2 {
+                font-family: 'Tangerine2',Times,serif;
+                font-size: 20pt;
+            }
+
+            .google3 {
+                font-family: 'Aclonica',Helvetica,sans-serif;
+                font-size: 20pt;
+            }		
+
+            .google4 {
+                font-family: 'Ribeye Marrow', cursive;
+                font-size: 20pt;
+            }	
+
+        </style>
+
+    </head>
+    <body>
+        <h1 class="sezione">CSS3: Web fonts</h1>
+
+        <p class="sezione">Grazie alle web fonts, è possibile disporre di una vasta libreria
+            di font, che estende notevolmente quella stabdard dei browser ed è soprattutto disponibile
+            su ogni piattaforma.</p>
+        <p class="sezione">Le web fonts vengono scaricati dinamicamente dai browser e messi
+            nella cache, non installati nel sistema. Esistono vari siti che esportano web font
+            gratuite, ma anche altri che mettono a disposizione migliaia di font a pagamento.</p>
+
+        <p>In questo esempio mostreremo come usare le Google Web Fonts. Il relativo codice CSS per
+            la loro incorporazione si può trovare visitando la fond directory all'indirizzo https://www.google.com/webfonts</p>
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="google1">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>		
+
+                    <div class="google2">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>	
+
+                    <div class="google3">			
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>			
+                    </div>	
+
+                    <div class="google4">			
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>			
+                    </div>	
+
+                </div><div class="sorgente">
+
+                    <h3>CSS</h3>
+
+                    <p>	@font-face {
+                        font-family: 'Tangerine';
+                        font-style: normal;
+                        font-weight: normal;
+                        src: local('Tangerine'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/HGfsyCL5WASpHOFnouG-RD8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+                        }<span class="commento"> Carichiamo una web font da google associandola al nome 'Tangerine' nella sua versione regolare (non grassetto, non corsivo, ecc.). Notare l'uso di più versioni dell'attributo src per
+                            problemi di compatibilità crossbrowser.		</span></p>
+
+                    <p>	@font-face {
+                        font-family: 'Tangerine2';
+                        font-style: normal;
+                        font-weight: normal;
+                        src: local('Tangerine'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/HGfsyCL5WASpHOFnouG-RD8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+                        }
+                        @font-face {
+                        font-family: 'Tangerine2';
+                        font-style: normal;
+                        font-weight: bold;
+                        src: local('Tangerine Bold'), local('Tangerine-Bold'), url('https://themes.googleusercontent.com/static/fonts/tangerine/v3/UkFsr-RwJB_d2l9fIWsx3nhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+                        }<span class="commento"> Possiamo anche caricare lo stesso font con un nome diverso, e/o associare font diversi a stili diversi della stessa famiglia </span></p>
+
+
+                    <p>		@font-face {
+                        font-family: 'Aclonica';
+                        font-style: normal;
+                        font-weight: normal;
+                        src: local('Aclonica'), local('Aclonica-Regular'), url('https://themes.googleusercontent.com/static/fonts/aclonica/v3/VVH16EjBQLZ2NYB8eVnrO_esZW2xOQ-xsNqO47m55DA.woff') format('woff');
+                        }</p>
+
+
+                    <p>		.google1 {
+                        font-family: 'Tangerine',Times,serif;
+                        font-size: 20pt;
+                        }
+                        .google2 {
+                        font-family: 'Tangerine2',Times,serif;
+                        font-size: 20pt;
+                        }
+                        .google3 {
+                        font-family: 'Aclonica',Helvetica,sans-serif;
+                        font-size: 20pt;
+                        }		
+                        .google4 {
+                        font-family: 'Ribeye Marrow', cursive;
+                        font-size: 20pt;
+                        }	
+                        <span class="commento"> Associamo quindi le nuove famiglie di font a qualsiasi elemento tramite le normali proprietà CSS. Non dimentichiamo di offrire delle alternative locali. </span></p>
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;google1&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;p&gt;&lt;b&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/b&gt;&lt;/p&gt;<br/>
+                        &lt;/div&gt;<span class="commento">Da notare come la piattaforma tenti di ottenere il font bold anche se non abbiamo caricato la variante corrispondente.</span></p>
+
+                    <p>&lt;div class=&quot;google2&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;p&gt;&lt;b&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/b&gt;&lt;/p&gt;<br/>
+                        &lt;/div&gt;<span class="commento">Tuttavia, usare la vera variante bold del font originale
+                            genera risultati nettamente migliori!</span></p>
+
+                    <p>&lt;div class=&quot;google3&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;/div&gt;</p>
+
+
+                    <p>&lt;link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'&gt;
+                        <span class="commento">In realtà Google fornisce un metodo più rapido per incorporare i suoi font: genera dei fogli di stile, che potete incorporare nei vostri documenti, che contengono proprio le regole @font-face appena mostrate...</span></p>
+                    <p>&lt;div class=&quot;google4&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+
+    </body>
+</html>

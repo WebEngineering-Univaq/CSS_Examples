@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html >
+
+    <head>
+        <title>CSS Sprites</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            .icon, .icon > * {
+                display: block;
+                width: 20px;
+                height: 20px;
+            }
+
+            .icon1 {                        
+                background: url(border.png) 0 0 ; 
+            } 
+
+            .icon2 {
+                background: url(border.png) -20px 0 ; 
+            } 
+
+            .icon3 {
+                background: url(border.png) 0 -20px ; 
+            } 
+
+            .icon3:hover {
+                background: url(border.png) -40px -20px ; 
+            } 
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1 class="sezione">CSS Sprites</h1>
+
+        <p class="sezione">Un uso particolare della proprietà background dei CSS, unitamente a width e height, permette di realizzare la
+            cosiddetta tecnica dei <em>CSS sprites</em>.</p>
+
+        <p class="sezione">L&#39;idea è quella di combinare tutti gli elementi grafici presenti in una pagina (soprattutto le icone, i
+            simboli, ecc., non le eventuali immagini vere e proprie) in una sola immagine, scaricandola una sola volta (invece di scaricare
+            un elemento per volta, con i ritardi dovuti alle connessioni di rete) e poi mostrandone solo delle sezioni nei punti
+            necessari.</p>
+
+        <p>In pratica, si usa l&#39;immagine &quot;combinata&quot; come sfondo di un elemento html la cui dimensione rispecchia quella
+            dell&#39;elemento grafico da visualizzare, e si posiziona tale sfondo usando degli offset tali da rendere visibile solo la parte
+            desiderata</p>
+
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+                    <div class="icon icon1"></div>
+
+                    <div class="icon icon2"></div>
+                </div>
+
+                <div class="sorgente">
+                    <h3>Immagine</h3><img src="border.png" width="60" height="60" alt="border.png" />
+
+                    <h3>CSS</h3>
+
+                    <p>.icon, .icon &gt; * { <span class="commento"> gli elementi che riempiremo con la grafica (e i loro eventuali discendenti diretti) devono essere di tipo blocco </span>		display: block; <span class="commento"> l&#39;elemento mostrerà solo una sezione 20x20 dello sfondo </span> width: 20px; height: 20px;
+                        }</p>
+
+                    <p>.icon1 { background: url(border.png) 0 0 ; <span class="commento"> lo sfondo viene posizionato allineandolo
+                            all&#39;angolo superiore sinistro dell&#39;elemento</span> }</p>
+
+                    <p>.icon2 { background: url(border.png) -20px 0 ; <span class="commento"> lo sfondo viene posizionato spostandolo a
+                            sinistra (coordinata x negativa) di 20 pixel, in modo che la parte visualizzata effettivamente inizi dalla coordinata
+                            (20,0)</span> }</p>
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;icon icon1&quot;&gt;&lt;/div&gt;</p>
+
+                    <p>&lt;div class=&quot;icon icon2&quot;&gt;&lt;/div&gt;</p>
+                </div>
+            </div>
+
+            <div class="esempio">
+                <div class="rendering"><span class="icon icon3"><a href="#"></a></span></div>
+
+                <div class="sorgente">
+                    <h3>CSS</h3>
+
+                    <p>.icon3 { background: url(border.png) 0 -20px ; <span class="commento"> lo sfondo viene posizionato spostandolo in alto
+                            (coordinata y negativa) di 20 pixel, in modo che la parte visualizzata effettivamente inizi dalla coordinata
+                            (0,20)</span> }</p>
+
+                    <p><span class="commento"> combinata con lo pseudo-elemento :hover, la tecnica dei CSS sprites è molto utilizzata per gli
+                            effetti di hovering su bottoni e altri controlli cliccabili </span> .icon3:hover { background: url(border.png) -40px
+                        -20px ; <span class="commento"> lo sfondo viene posizionato spostandolo in alto di 20 pixel e a sinistra di 40 pixel, in
+                            modo che la parte visualizzata effettivamente inizi dalla coordinata (40,20)</span> }</p>
+
+                    <h3>HTML</h3><p>&lt;span class=&quot;icon icon3&quot;&gt; &lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/span&gt;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

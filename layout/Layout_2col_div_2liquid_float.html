@@ -1,0 +1,74 @@
+<!doctype html>
+<html >
+    <head>
+
+        <title>Layout di base: liquido a 2 colonne (entrambe liquide) con DIV float</title>		
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+		<link rel="stylesheet" href="layouts.css" type="text/css"/>
+        <meta charset="utf-8"/>
+		
+		<style type="text/css">
+			body, html {
+				margin:0;
+				padding:0;
+			}
+
+			.header{
+				height:50px;
+				overflow: hidden;
+			}
+
+			.center{
+				float: left;
+				width: 100%;
+			}
+
+			.body{
+				margin-left: 20%;
+				overflow: hidden;
+			}
+
+			.left{
+				float: left;
+				width: 20%; 
+				margin-left: -100%;
+				z-index: 10;
+				overflow: hidden;
+			}
+
+			.footer{
+				clear: left;
+				margin-left: 20%;
+				height:30px;
+				overflow: hidden;
+			}
+</style>
+
+	</head>
+	<body>
+	
+	
+
+		<div class="header">Header</div>
+
+		<div class="center">
+			<div class="body">
+				<p>Body</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>		
+			</div>
+		</div>
+
+		<div class="left">
+			<p>Left</p>
+			<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		</div>
+
+		<div class="footer">Footer</div>
+
+	
+		
+		
+	</body>
+</html>

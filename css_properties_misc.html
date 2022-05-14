@@ -1,0 +1,171 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS: altre proprietà</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">	
+
+            .quotato:before {content: open-quote;}
+            .quotato:after {content: close-quote;}
+            .quotato {quotes: "<<" ">>";}
+			
+			.parentesizzato:before {content: open-quote;}
+            .parentesizzato:after {content: close-quote;}
+            .parentesizzato {quotes: "(" ")" "[" "]" "{" "}";}
+
+            .contato:before {content: "Contatore " counter(contatore1) ". ";}
+            .contato {counter-increment: contatore1;}
+
+            .cursore1 {cursor: move;}
+            .cursore2 {cursor: help;}
+            .cursore3 {cursor: progress;}
+			
+			.esempio h1:before {content: counter(hl1) ". ";}
+			.esempio h1 {counter-increment: hl1; counter-reset: hl2 0; }
+			.esempio h2:before {content: counter(hl1) "." counter(hl2) ". ";}
+			.esempio h2 {counter-increment: hl2;}
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1 class="sezione">Altre proprietà CSS</h1>
+
+        <h2 class="sezione">Proprietà content e quotes</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="quotato">ciao</div>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class="quotato"&gt;ciao&lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>.quotato:before {content: open-quote;}</p>
+                    <p>.quotato:after {content: close-quote;}</p>
+                    <p>.quotato {quotes: "&lt;&lt;" "&gt;&gt;";} <span class="commento"> su alcuni browser questa proprietà farà sì che il testo di classe quotato sia posto tra le virgolette indicate sopra </span></p>
+
+                </div></div>
+				
+				<div class="esempio"><div class="rendering">
+
+                    <div class="parentesizzato">ciao <span class="parentesizzato">ciao <span class="parentesizzato">ciao <span class="parentesizzato">ciao</span></span></span>
+					<span class="parentesizzato">ciao</span>			
+					</div>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;parentesizzato&quot;&gt;ciao 
+					&lt;span class=&quot;parentesizzato&quot;&gt;ciao 
+					&lt;span class=&quot;parentesizzato&quot;&gt;ciao 
+					&lt;span class=&quot;parentesizzato&quot;&gt;ciao&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</p>		
+					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao&lt;/span&gt;	</p>		
+					<p>&lt;/div&gt;</p>		
+
+                    <h3>CSS</h3>
+                    <p>.parentesizzato:before {content: open-quote;}</p>
+                    <p>.parentesizzato:after {content: close-quote;}</p>
+                    <p>.parentesizzato {quotes: "(" ")" "[" "]" "{" "}";} <span class="commento"> Le parentesi vengono automaticamente selezionate in base al livello di nidificazione</span></p>
+
+                </div></div>
+				
+        </div>
+
+        <h2 class="sezione">Proprietà content e counter</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="contato">ciao</div>
+                    <div class="contato">riciao</div>
+
+                </div><div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class="contato"&gt;ciao&lt;/div&gt;</p>
+                    <p>&lt;div class="contato"&gt;riciao&lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>.contato:before {content: "Contatore " counter(contatore1) ". ";}<span class="commento">                             prima di ogni blocco di classe contato viene posta la scritta &quot;Contatore&quot; 
+                            seguita dal volare del contatore1 e da un punto </span></p>
+                    <p>.contato {counter-increment: contatore1;}		
+					<span class="commento"> ogni  blocco di classe contato incrementa di uno il contatore1 </span></p>
+
+                </div></div>
+				
+				
+				
+				            <div class="esempio"><div class="rendering">
+
+                    <h1>Titolo1</h1>
+					<h2>Titolo2</h2>
+					<h2>Titolo2</h2>
+					<h1>Titolo1</h1>
+					<h2>Titolo2</h2>
+                    
+
+                </div><div class="sorgente">
+				
+				 <h3>HTML</h3>
+
+                     <p>&lt;h1&gt;Titolo1&lt;/h1&gt;</p>
+					<p>&lt;h2&gt;Titolo2&lt;/h2&gt;</p>
+					<p>&lt;h2&gt;Titolo2&lt;/h2&gt;</p>
+					<p>&lt;h1&gt;Titolo1&lt;/h1&gt;</p>
+					<p>&lt;h2&gt;Titolo2&lt;/h2&gt;</p>
+
+                    <h3>CSS</h3>
+                    
+					<p>h1:before {content: counter(hl1) ". ";}</p>
+					<p>h1 {counter-increment: hl1; counter-reset: hl2 0; }</p>
+					<p>h2:before {content: counter(hl1) "." counter(hl2) ". ";}</p>
+					<p>h2 {counter-increment: hl2;}</p>
+
+                   <span class="commento"> le regole relative agli elementi H1 e H2 gestiscono due contatori. In particolare, la regola H1 resetta a zero il contatore usato per H2 </span></p>
+
+                </div></div>
+				
+        </div>
+
+        <h2 class="sezione">Proprietà cursor</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="cursore1">pippo</div>
+                    <div class="cursore2">pluto</div>
+                    <div class="contato cursore3">paperino</div>
+
+                </div><div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class="cursore1"&gt;pippo&lt;/div&gt;</p>
+                    <p>&lt;div class="cursore2"&gt;pluto&lt;/div&gt;</p>
+                    <p>&lt;div class="contato cursore3"&gt;paperino&lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>.cursore1 {cursor: move;}</p>
+                    <p>.cursore2 {cursor: help;}</p>
+                    <p>.cursore3 {cursor: progress;}<span class="commento"> muovete il mouse                             sulle tre righe di testo per vedere l'effetto di queste proprietà cursor </span></p>
+
+                </div></div>
+        </div>
+
+
+    </body>
+</html>

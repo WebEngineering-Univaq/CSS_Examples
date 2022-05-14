@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html >
+
+    <head>
+        <title>CSS3: Bordi con immagini</title>
+        <link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+
+            .border1 {
+                border: 10px solid transparent;
+                -webkit-border-image: url(border.png) 20 round; 
+                -o-border-image: url(border.png) 20 round; 
+                border-image: url(border.png) 20 round;
+                margin: 10px;
+            } 
+
+            .border2 {
+                border: 10px solid transparent;
+                -webkit-border-image: url(border.png) 20 stretch; 
+                -o-border-image: url(border.png) 20 stretch; 
+                border-image: url(border.png) 20 stretch;
+                margin: 10px;
+            } 
+
+            .border3 {
+                border: 10px solid transparent;
+                -webkit-border-image: url(border.png) 20 repeat; 
+                -o-border-image: url(border.png) 20 repeat; 
+                border-image: url(border.png) 20 repeat;
+                margin: 10px;
+            } 
+
+            .border4 {
+                border: 20px solid transparent;
+                -webkit-border-image: url(border.png) 20 round; 
+                -o-border-image: url(border.png) 20 round; 
+                border-image: url(border.png) 20 round;
+                margin: 10px;
+            } 
+
+        </style>
+
+    </head>
+    <body>
+        <h1 class="sezione">CSS3: Bordi con immagini</h1>
+
+        <p >Grazie alla proprieta' border-image, è possibile disegnare bordi molto complessi usando le immagini,
+            ma senza ricadere nelle tecniche poco ortodosse utilizzate prima del supporto CSS.</p>
+        <p >E' necessario predisporre un'immagine che contenga gli otto elementi fondamentali
+            di un bordo: quattro angoli e quattro lati.</p>
+
+        <p>L'immagine verrà poi "ritagliata" dai CSS ed utilizzata per comporre il bordo. Le parti usate per i lati
+            potranno essere ripetute oppure deformate per coprire interamente il bordo.</p>
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="border1">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>		
+
+
+                </div><div class="sorgente">
+
+                    <h3>Immagine</h3>
+
+                    <img src="border.png" width="60" height="60" alt="border.png"/>
+
+
+                    <h3>CSS</h3>
+
+                    <p>		.border1 {
+                        border: 10px solid transparent;
+                        <span class="commento">Bosogna sempre aggiungere un bordo (solitamente trasparente) perchè appaia quello definito con border-image. Le immagini verranno scalate in base all'ampiezza del bordo qui definito</span>
+                        -webkit-border-image: url(border.png) 20 round; 
+                        -o-border-image: url(border.png) 20 round; 
+                        border-image: url(border.png) 20 round;
+                        } <span class="commento"> la proprietà border-image prende come argomenti, nell'ordine, 
+                            l'immagine, la dimensione della cella (altezza e larghezza) per il suo ritaglio (slice)
+                            (da una a quattro) e il metodo di riempimento da usare per creare i lati (uno o due, qui round significa "ripeti ed eventualmente scala").
+                            Altri parametri opzionali permettono di raffinare maggiormente il processo di creazione del bordo	</span></p>
+
+
+                    <h3 class="sezione">HTML</h3>
+
+                    <p>
+                        &lt;div class=&quot;border1&quot;&gt;
+
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+                        &lt;p&gt;&lt;b&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/b&gt;&lt;/p&gt;
+
+                        &lt;/div&gt;</p>	
+                </div></div>
+
+
+
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="border2">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>	
+
+                    <div class="border3">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>	
+
+                    <div class="border4">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p><b>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</b></p>
+
+                    </div>	
+
+
+
+                </div><div class="sorgente">
+
+
+
+                    <h3>CSS</h3>
+
+
+                    <p>		.border2 {
+                        border: 10px solid transparent;
+                        -webkit-border-image: url(border.png) 20 stretch; 
+                        -o-border-image: url(border.png) 20 stretch; 
+                        <span class="commento"> bordo in modalità stretch (scala) </span>
+                        border-image: url(border.png) 20 stretch;
+                        } </p>
+
+                    <p>		.border3 {
+                        border: 10px solid transparent;
+                        -webkit-border-image: url(border.png) 20 repeat; 
+                        -o-border-image: url(border.png) 20 repeat; 
+                        <span class="commento"> bordo in modalità repeat (ripeti) </span>
+                        border-image: url(border.png) 20 repeat;
+                        } </p>
+
+                    <p>		.border4 {
+                        border: 20px solid transparent;
+                        <span class="commento"> bordo pi&ugrave; spesso </span>
+                        -webkit-border-image: url(border.png) 20 round; 
+                        -o-border-image: url(border.png) 20 round; 
+                        <span class="commento"> bordo in modalità round (ripeti ed eventualmente scala) </span>
+                        border-image: url(border.png) 20 round;
+                        } </p>
+
+
+
+
+                </div></div>
+
+
+
+
+
+        </div>
+
+    </body>
+</html>

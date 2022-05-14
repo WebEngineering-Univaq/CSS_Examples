@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html >
+	<head>
+		<title>CSS overflow property</title>
+		<link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+                <meta charset="utf-8"/>
+                <style type="text/css">
+
+
+		.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left;}
+
+	</style>
+	</head>
+	<body>
+	
+<h1 class="sezione">Uso della proprietà overflow</h1>
+	
+	
+
+		<div class="esempi">
+		
+		<div class="esempio"><div class="rendering">
+
+		
+	
+<h2 class="sezione">overflow normale</h2>
+<div class="blocco">
+		1 2 3 4 5 6 7 8 9 0
+		</div>
+
+		<div class="blocco">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+		</div>
+		
+		</div><div class="sorgente">
+
+<p>		.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left;}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. Il contenuto in eccesso fuoriesce dal suo box</span></p>
+				
+		</div></div>
+
+	<div class="esempio"><div class="rendering">
+		
+<h2 class="sezione">overflow hidden</h2>
+		<div class="blocco" style="overflow: hidden">
+		1 2 3 4 5 6 7 8 9 0
+		</div>
+
+		<div class="blocco" style="overflow: hidden">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+		</div>
+
+
+</div><div class="sorgente">
+<p>						.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left; overflow:hidden}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. Il contenuto in eccesso 
+viene nascosto dalla proprietà overflow: hide </span></p>
+		</div></div>
+
+	<div class="esempio"><div class="rendering">
+	
+<h2 class="sezione">overflow scroll</h2>
+
+<div class="blocco" style="overflow: scroll">
+		1 2 3 4 5 6 7 8 9 0
+		</div>
+
+		<div class="blocco" style="overflow: scroll">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+		</div>
+
+</div><div class="sorgente">
+<p>.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left; overflow:scroll}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. La proprietà overflow: scroll 
+mostra le due barre di scorrimento (anche se quella orizzontale non è 
+necessaria) con la quale si può scorrere tutto il contenuto </span></p>
+		</div></div>
+
+	<div class="esempio"><div class="rendering">
+
+<h2 class="sezione">overflow auto</h2>
+
+<div class="blocco" style="overflow: auto">
+		1 2 3 4 5 6 7 8 9 0
+		</div>
+		
+		<div class="blocco" style="overflow: auto">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+		</div>
+
+</div><div class="sorgente">
+<p>.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left; overflow:auto}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. La proprietà overflow: auto 
+mostra solo la barra di scorrimento verticale 
+necessaria a scorrerne il contenuto </span></p>
+		</div></div>
+
+	<div class="esempio"><div class="rendering">
+
+<h2 class="sezione">overflow e clipping</h2>
+<p>Il testo visibile è una parte di quello effettivo, e può essere spostato via script rispetto al riquadro di clipping</p>
+		<div class="blocco" style="overflow: hidden; position: relative;">
+			<div style="position:absolute; top: -20px;">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+			</div>
+		</div>
+</div><div class="sorgente">
+				
+	<p>.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left; overflow:hidden; position:relative}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. E il contenuto in eccesso viene nascosto. Si crea quindi una 
+	&quot;finestra&quot; sul contenuto del box </span></p>
+				
+	<p>			&lt;div class="blocco"&gt;</p>
+	<p>		&lt;div style="position:absolute; top: -20px;"&gt;</p>
+	<p>	A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+	<p>		&lt;/div&gt;
+		&lt;/div&gt; <span class="commento">&lt;!-- Il contenuto è posizionato 
+	rispetto al contenitore e può essere fatto scorrere variando la proprietà 
+	top via codice javascript, cambiando quindi la parte di testo visibile 
+	attraverso la &quot;finestra&quot;--&gt;</span></p>
+				
+		</div></div>
+
+	</div>
+	</body>
+	
+	
+	
+</html>

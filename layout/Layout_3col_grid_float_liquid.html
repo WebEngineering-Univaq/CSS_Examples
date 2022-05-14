@@ -1,0 +1,105 @@
+<!doctype html>
+<html >
+    <head>
+        <title>Layout di base: responsive a 3 colonne con GRID (float)</title>	
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+		<link rel="stylesheet" href="layouts.css" type="text/css"/>
+		<link rel="stylesheet" href="grid_float.css" type="text/css"/>
+        <meta charset="utf-8"/>
+		<style type="text/css">
+			body,html,p {
+				padding:0; 
+				margin:0;
+			}
+			
+			
+
+			.header { height:50px; }
+			.footer { height:30px;}
+
+			#smallmenu {display: none;}
+			#menu {display: block;}
+
+			.form  > .row {border-bottom: 1px dotted #DDD; text-align: left;}
+				
+			@media only screen and (min-width: 768px) and (max-width: 959px) {
+				.left,.right {font-size: 9pt;}
+			}
+
+			 @media only screen and (max-width: 767px) {			
+				.right {display: none;}
+				#menu {display: none}
+				#smallmenu {display: block;}			
+			}
+		</style>
+	</head>
+	<body >
+	
+	<div class="container">
+		
+		<div class="row">
+		<div class="sixteen columns">
+		<div class="header">Header</div>
+		</div></div>
+		
+		<div class="row">
+		
+		<div class="three columns">
+		<div class="left">
+		<p>Left</p>
+		<p><select id="smallmenu">
+		<option>Menu1</option>
+		<option>Menu2</option>
+		<option>Menu3</option>
+		<option>Menu4</option>
+		</select></p>
+		<ul id="menu">
+		<li>Menu1</li>
+		<li>Menu2</li>
+		<li>Menu3</li>
+		<li>Menu4</li>
+		</ul>
+		</div>
+		</div>
+				
+		
+		<div class="ten columns">	
+		<div class="body">	
+		<p>Body</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		
+		<div class="form">
+			<div class="row">
+			<div class="four columns"><b>Name</b></div>
+			<div class="twelve columns">Donald</div>
+			</div>
+			<div class="row">
+			<div class="four columns"><b>Surname</b></div>
+			<div class="twelve columns">Duck</div>
+			</div>
+		</div>
+		
+		
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>		
+		</div>
+		</div>
+
+		<div class="three columns">
+		<div class="right">
+		<p>Right</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		</div>
+		</div>
+		
+		
+		</div>
+		
+		<div class="row">
+		<div class="sixteen columns">
+		<div class="footer">Footer</div>
+		</div></div>
+		
+	</div>
+		
+	</body>
+</html>

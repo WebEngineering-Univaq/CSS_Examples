@@ -1,0 +1,76 @@
+<!doctype html>
+<html >
+    <head>
+
+        <title>Layout di base: liquido a 2 colonne (entrambe liquide) con FlexBox</title>	
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+		<link rel="stylesheet" href="layouts.css" type="text/css"/>
+        <meta charset="utf-8"/>
+	
+	
+		<style type="text/css">
+
+			.body {
+				overflow:hidden;
+			}
+			
+			.header {
+				height: 50px;
+			}
+			
+			.footer {
+				height: 30px;
+			}
+			
+			.fl-container {
+				display: -webkit-box;      /* iOS 6-, Safari 3.1-6 */
+				display: -moz-box;         /* Firefox 19 */
+				display: -ms-flexbox;      /* IE 10 */
+				display: -webkit-flex;     /* Chrome */
+				display: flex;             /* Opera 12.1, Firefox 20+ */
+			}
+			
+			.main {
+				/* width: 80% */
+				flex: 8;			
+				overflow:hidden;
+			}
+						
+			.left {
+				/* width: 20% */
+				flex: 2;
+			}
+
+
+		
+		</style>
+	</head>
+	<body>
+	
+		
+		<div class="header">Header</div>
+		<div class="fl-container">
+			<div class="left">
+			<p>Left</p>
+			<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+			</div>
+			
+			<div class="main">
+				<div class="body">
+					
+	
+	
+				<p>Body</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+				<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+				</div>
+				
+				<div class="footer">Footer</div>
+			</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

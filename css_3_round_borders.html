@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS3: round borders</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            .box {
+                border:1px solid #8AAFE1;
+            }
+
+            .shadow {
+                -moz-box-shadow:5px 5px 2px #DDD;
+                -webkit-box-shadow:5px 5px 2px #DDD;
+                box-shadow:5px 5px 2px #DDD;
+            }
+
+            .round {
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                border-radius:5px;		
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <h1 class="sezione">Nuove proprietà dei CSS versione 3</h1>
+        <h2 class="sezione">Bordi arrotondati con i CSS versione 3</h2>
+        <p class="sezione">In questo esempio gli angoli smussati sono ottenuti 
+            usando le proprietà di sile apposite dei CSS3.</p>
+        <p class="sezione">Purtroppo non tutti i browser supportano ancora queste proprietà
+            con il loro nome "ufficiale", quindi per compatibilità è utile impostare sempre anche alcune
+            proprietà "proprietarie" apprtenenti alle estensioni dei singoli browser.</p>
+        <p class="sezione">Se poi, come accade in molte versioni recenti di IE, i CSS3 non
+            fossero ancora supportati, in ogni caso il bordo degraderebbe bene perdendo solo
+            la ritondità degli angoli.</p>
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="box round">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+
+                    </div>		
+
+                </div><div class="sorgente">
+
+                    <h3>CSS</h3>
+
+                    <p>		.box {
+                        border:1px solid #8AAFE1;
+                        }<span class="commento"> Impostiamo prima di tutto il bordo con le proprietà standard </span></p>
+
+                    <p>		.round {
+                        -moz-border-radius:5px;
+                        -webkit-border-radius:5px;
+                        border-radius:5px;		
+                        }<span class="commento"> Quindi procediamo con la curvartura. Nell'ordine troviamo la proprietà interna di mozilla, quella di Opera (e Chrome), e quella ufficiale CSS3 </span></p>
+
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;box round&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+
+
+        <h2 class="sezione">Combinazione di proprietà...</h2>
+        <p class="sezione">Ovviamente i bordi arrotondati possono essere combinati con altre propriet&agrave; CSS3, come le ombre...</p>
+
+        <div class="esempi">
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="box shadow round">
+
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+                        <p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+
+                    </div>		
+
+                </div><div class="sorgente">
+
+                    <h3>CSS</h3>
+
+                    <p>		.box {
+                        border:1px solid #8AAFE1;
+                        }</p>
+
+                    <p>		.shadow {
+                        -moz-box-shadow:5px 5px 2px #DDD;
+                        -webkit-box-shadow:5px 5px 2px #DDD;
+                        box-shadow:5px 5px 2px #DDD;
+                        }</p>
+
+                    <p>		.round {
+                        -moz-border-radius:5px;
+                        -webkit-border-radius:5px;
+                        border-radius:5px;		
+                        }</p>
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;box shadow round&quot;&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+                        &lt;/div&gt;</p>
+
+                </div></div>
+        </div>
+    </body>
+</html>

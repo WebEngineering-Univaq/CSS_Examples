@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html >
+    
+	<head>
+		<title>CSS3: shadows</title>
+		<link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+		<style type="text/css">
+		.box {
+			border:1px solid #8AAFE1;
+		}
+		
+		.shadow {
+			-moz-box-shadow:5px 5px 2px #DDD;
+			-webkit-box-shadow:5px 5px 2px #DDD;
+			box-shadow:5px 5px 2px #DDD;
+		}
+		
+		.textshadow {
+			text-shadow:2px 2px 0 #AAA;
+		}
+		
+		.round {
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border-radius:5px;		
+		}
+
+		</style>
+
+	</head>
+	<body>
+		<h1 class="sezione">Nuove proprietà dei CSS versione 3</h1>
+			
+		
+		<h2 class="sezione">Ombre con i CSS versione 3</h2>
+		<p class="sezione">Un'altra proprietà introdotta dai CSS3 e utile per "abbellire" i propri riquadri è quella che permette di generare ombre.</p>
+		<p class="sezione">Anche in questo caso, per ottenere lo stesso risultato prima ci si avvaleva di tecniche alternative basate su immagini.</p>
+
+		<div class="esempi">
+	
+		<div class="esempio"><div class="rendering">
+		
+		<div class="box shadow">
+			
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+			
+		</div>		
+		
+		</div><div class="sorgente">
+		
+		<h3>CSS</h3>
+		
+		<p>		.box {
+			border:1px solid #8AAFE1;
+		}<span class="commento"> Impostiamo prima di tutto il bordo con le proprietà standard.</span></p>
+		
+		<p>		.shadow {
+			-moz-box-shadow:5px 5px 2px #DDD;
+			-webkit-box-shadow:5px 5px 2px #DDD;
+			box-shadow:5px 5px 2px #DDD;
+		}<span class="commento"> Quindi procediamo con l'ombra. Nell'ordine troviamo la proprietà interna di mozilla, quella di Opera (e Chrome), e quella ufficiale CSS3 </span>
+		<span class="commento"> I valori della proprietà sono: lo scostamento orizzontale e verticale dell'ombra (anche negativi), il raggio di sfumatura e il colore. </span>		</p>
+		
+		
+		<h3>HTML</h3>
+		
+		<p>&lt;div class=&quot;box shadow&quot;&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+		&lt;/div&gt;</p>
+		
+		</div></div>
+		
+		<div class="esempio"><div class="rendering">
+		
+		<div class="shadow">
+			
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+			
+		</div>		
+		
+		</div><div class="sorgente">
+		
+		<h3>CSS</h3>
+		
+		
+		
+		
+		
+		<p>		<span class="commento"> Notare come, se omettiamo il bordo, l'ombra appaia comunque proiettata dal bordo stesso </span>
+		.shadow {
+			-moz-box-shadow:5px 5px 2px #DDD;
+			-webkit-box-shadow:5px 5px 2px #DDD;
+			box-shadow:5px 5px 2px #DDD;
+		}<span class="commento"> Quindi procediamo con l'ombra. Nell'ordine troviamo la proprietà interna di mozilla, quella di Opera (e Chrome), e quella ufficiale CSS3 </span>
+		<span class="commento"> I valori della proprietà sono: lo scostamento orizzontale e verticale dell'ombra (anche negativi), il raggio di sfumatura e il colore. </span>			</p>
+		
+		
+		<h3>HTML</h3>
+		
+		<p>&lt;div class=&quot;shadow&quot;&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+		&lt;/div&gt;</p>
+		
+		</div></div>
+		</div>
+		
+		
+
+		
+		
+		<h2 class="sezione">Ombre per il testo con i CSS versione 3</h2>
+		<p class="sezione">Le ombre si possono applicare anche al testo, ma con una proprietà differente.</p>
+			
+
+		<div class="esempi">
+	
+		<div class="esempio"><div class="rendering">
+		
+		<div class="textshadow">
+			
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				<p>bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+			
+		</div>		
+		
+		</div><div class="sorgente">
+		
+		<h3>CSS</h3>
+				
+		<p>		.textshadow {
+			text-shadow:2px 2px 0 #AAA;
+		}
+		<span class="commento"> I valori della proprietà sono: lo scostamento orizzontale e verticale dell'ombra (anche negativi), il raggio di sfumatura e il colore. </span></p>
+		
+		
+			<h3>HTML</h3>
+		
+		<p>&lt;div class=&quot;textshadow&quot;&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+				&lt;p&gt;bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;<br/>
+		&lt;/div&gt;</p>
+		
+		</div></div>
+		</div>
+
+	</body>
+</html>

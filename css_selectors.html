@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS selectors</title>
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            /* selettori di base  */
+            p {margin:0}
+            em {color: red}
+            * {font-size: 10pt;}
+
+            /* selettori di attributo */
+            a[accesskey] {border-left: 2px solid #c0c0c0; border-top: 2px solid #c0c0c0; border-right: 2px solid #909090; border-bottom: 2px solid #909090; background: #f0f0f0; padding: 2px; }
+            a[rel~=index] {font-style: italic;}
+            a[rel=index] {font-weight: bold;}
+
+
+            /* selettori di classe  */
+            .classe1 {color: cyan}
+            div.classe2 {color: magenta}
+
+            /* selettori di ID */
+            #menu {background-color: yellow}
+
+            /* pseudo classi  */
+            .lista1 li:first-child {background-color: olive}
+            .lista2 li:first-child {border-top-width: 0;}
+            .lista2 li {border-top: 1px solid black;}
+            a.hovering {color:black}
+            a.hovering:hover {color:blue}
+
+            input.activating {border:2px solid black}
+            input.activating:hover {border-color:blue}
+            input.activating:focus {border-color:red}
+
+            /* pseudo elementi  */
+            div.bigfirst:first-letter {font-size: 200%}
+            div.bigfirst:first-line {font-size: 150%}
+
+            /* combinazioni  */
+            .diffbold b {letter-spacing: 2px;}
+            .diffitalic > i {letter-spacing: -2px;}
+            h1 + h3 {margin-top:-10px; color: blue;}
+
+        </style>
+    </head>
+    <body>	
+        <h1 class="sezione">Selettori CSS</h1>
+        <h2 class="sezione">Selettori di base</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+                    <p>Test numero 1</p>
+                    <p>Test numero 2</p>		
+                    <p>Test numero 3 <em>con enfasi</em></p>
+
+                </div><div class="sorgente">                    <h3>HTML</h3>
+
+                    <p>&lt;p&gt;Test numero 1&lt;/p&gt;</p>
+                    <p>&lt;p&gt;Test numero 2&lt;/p&gt;</p>
+                    <p>&lt;p&gt;Test numero 3 &lt;em&gt;con enfasi&lt;/em&gt;&lt;/p&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>p {margin:0} <span><span class="commento">  tutti i tag p non hanno margine  </span></span></p>
+                    <p>em {color: red} <span class="commento">  tutti gli elementi em hanno testo rosso  </span></p>
+                    <p>* {font-size: 10pt;} <span class="commento">  tutti gli elementi hanno testo da 10 punti </span></p>
+
+                </div></div>
+        </div>
+
+
+
+
+
+        <h2 class="sezione">Selettori di attributo</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <p><a href="pippo.html">link</a></p>
+                    <p><a href="pippo.html" accesskey="A">link con accesskey</a></p>		
+                    <p><a rel="index contents">link con rel="contents index"</a></p>
+                    <p><a rel="index">link con rel=index</a></p>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+                    <p>&lt;p&gt;&lt;a href=&quot;pippo.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;</p>
+                    <p>		&lt;p&gt;&lt;a href=&quot;pippo.html&quot; accesskey=&quot;A&quot;&gt;link con accesskey&lt;/a&gt;&lt;/p&gt;</p>
+                    <p>&lt;p&gt;&lt;a rel=&quot;index contents&quot;&gt;link con rel=&quot;contents index&quot;&lt;/a&gt;&lt;/p&gt;</p>
+                    <p>	&lt;p&gt;&lt;a rel=&quot;index&quot;&gt;link con rel=index&lt;/a&gt;&lt;/p&gt;</p>
+
+                   
+
+                    <h3>CSS</h3>
+                    <p>a[accesskey] {border-left: 2px solid #c0c0c0; border-top: 2px solid #c0c0c0; border-right: 2px solid #909090; border-bottom: 2px solid #909090; background: #f0f0f0; padding: 2px; } 
+                        <span class="commento">  tutti i tag a con attributo accesskey sono formattati in maniera speciale  </span></p>
+                    <p>a[rel~=index] {font-style: italic;} <span class="commento">  tutti i tag a il cui attributo rel 
+                            contiene index sono formattati in corsivo  </span></p>
+                    <p>a[rel=index] {font-weight: bold;} <span class="commento">  tutti i tag a con attributo rel uguale a 
+                            index sono formattati in grassetto </span></p>
+
+                </div></div>
+        </div>
+
+
+        <h2 class="sezione">Selettori di classe</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="classe1">div di classe1</div>
+                    <div class="classe2">div di classe2</div>
+                    <h1 class="classe1">h1 di classe 1</h1>
+                    <h1 class="classe2">h1 di classe 2</h1>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;classe1&quot;&gt;div di classe1&lt;/div&gt;</p>
+                    <p>	&lt;div class=&quot;classe2&quot;&gt;div di classe2&lt;/div&gt; </p>
+                    <p>		&lt;h1 class=&quot;classe1&quot;&gt;h1 di classe 1&lt;/h1&gt;</p>
+                    <p>	&lt;h1 class=&quot;classe2&quot;&gt;h1 di classe 2&lt;/h1&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>.classe1 {color: cyan} <span class="commento">  tutti gli elementi di classe1 hanno testo di colore 
+                            ciano  </span></p>
+                    <p>div.classe2 {color: magenta} <span class="commento">  tutte le div di classe2 hanno testo di colore 
+                            magenta  </span></p>
+
+                </div></div>
+        </div>
+
+
+        <h2 class="sezione">Selettori di id e pseudo classe first-child</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div id="menu">il menu</div>
+
+                    <ul class="lista2">
+                        <li>primo</li>
+                        <li>secondo</li>
+                        <li>terzo</li>
+                    </ul>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div id=&quot;menu&quot;&gt;il menu&lt;/div&gt;</p>
+                    <p>		&lt;ul&gt;</p>
+                    <p>			&lt;li&gt;primo&lt;/li&gt;</p>
+                    <p>			&lt;li&gt;secondo&lt;/li&gt;</p>
+                    <p>			&lt;li&gt;terzo&lt;/li&gt;</p>
+                    <p>		&lt;/ul&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>#menu {background-color: yellow} <span class="commento">  l'elemento con id=&quot;menu&quot; ha 
+                            sfondo giallo  </span></p>
+
+                    <p>li {border-top: 1px solid black;}
+                        <span class="commento">  gli elementi li in ogni 
+                            contenitore (quindi lista) ha un bordo superiore  </span>                    </p>
+                    <p>li:first-child {border-top-width: 0;}
+                        <span class="commento">  ... ma il primo elemento li non ha bordo superiore  </span></p>
+
+
+                </div></div>
+        </div>
+
+
+        <h2 class="sezione">Selettori di classe e pseudo classe</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <p><a class="hovering" href="pippo.html">link con hover effect</a></p>
+
+                    <p><input type="text" class="activating" name="pippo" value="input con hover e focus effect"/></p>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;p&gt;&lt;a class=&quot;hovering&quot; href=&quot;pippo.html&quot;&gt;link con hover effect&lt;/a&gt;&lt;/p&gt;</p>
+
+                    <p>&lt;p&gt;&lt;input type=&quot;text&quot; class=&quot;activating&quot; name=&quot;pippo&quot; value=&quot;input con hover e focus effect&quot;/&gt;</p>
+
+
+                    <h3>CSS</h3>
+                    <p>a.hovering {color:black} <span class="commento">  gli elementi a di classe hovering hanno testo 
+                            nero  </span></p>
+                    <p>a.hovering:hover {color:blue} <span class="commento">  gli elementi a di classe hovering, quando il 
+                            mouse passa su di essi, hanno testo di colore blu  </span></p>
+
+
+                    <p>input.activating {border:2px solid black}<span class="commento">  gli input di classe activating hanno un bordo nero spesso  </span></p>
+                    <p>input.activating:hover {border-color:blue}<span class="commento"> ...che diventa blu quando il mouse è sopra al controllo  </span></p>
+                    <p>input.activating:focus {border-color:red}<span class="commento"> ...e rosso se il cursore è nel controllo (focus)  </span></p>
+
+
+
+                </div></div>
+        </div>
+
+
+        <h2 class="sezione">Selettori di pseudo elemento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="bigfirst">Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita</div>
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;bigfirst&quot;&gt;Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita&lt;/div&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>div.bigfirst:first-letter {font-size: 200%} <span class="commento">  la prima lettera nelle 
+                            div di classe bigfirst ha una dimensione doppia rispetto al testo 
+                            normale  </span></p>
+                    <p>div.bigfirst:first-line {font-size: 150%} <span class="commento">  la prima lettera nelle div di 
+                            classe bigfirst ha una dimensione carattere che è 1,5 quella del testo normale 
+                             </span></p>
+
+                </div></div>
+        </div>
+
+
+
+
+        <h2 class="sezione">Selettori composti</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+
+                    <div class="diffbold">testo <b>in grassetto</b> in una div di classe diffbold</div>
+                    <div>testo <b>in grassetto</b> in una div senza classe</div>
+                    <div class="diffitalic">testo <i>in corsivo</i> e altro testo <span>in uno span <i>sempre in corsivo</i></span></div>
+                    <h1>titolo 1</h1>
+                    <h3>titolo 3</h3>
+                    <h3>titolo 3</h3>
+
+
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;diffbold&quot;&gt;testo &lt;b&gt;in grassetto&lt;/b&gt; in una div di classe diffbold&lt;/div&gt;</p>
+                    <p>		&lt;div&gt;testo &lt;b&gt;in grassetto&lt;/b&gt; in una div senza classe&lt;/div&gt;</p>
+                    <p>		&lt;div class=&quot;diffitalic&quot;&gt;testo &lt;i&gt;in corsivo&lt;/i&gt; e altro testo &lt;span&gt;in uno span &lt;i&gt;sempre in corsivo&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;</p>
+                    <p>&lt;h1&gt;titolo 1&lt;/h1&gt;</p>
+                    <p>&lt;h3&gt;titolo 3&lt;/h3&gt;</p>
+                    <p>&lt;h3&gt;titolo 3&lt;/h3&gt;</p>
+
+                    <h3>CSS</h3>
+                    <p>.diffbold b {letter-spacing: 2px;} <span class="commento">  gli elementi b all'interno di elementi 
+                            di classe diffbold hanno testo con lettere spaziate di 2 pixel  </span></p>
+                    <p>.diffitalic > i {letter-spacing: -2px;} <span class="commento">  gli elementi i che sono figli 
+                            diretti di elementi di classe diffitalic hanno testo con lettere ravvicinate di 
+                            2 pixel  </span></p>
+                    <p>h1 + h3 {margin-top:-10px; color: blue;} <span class="commento">  gli elementi h3 che seguono 
+                            immediatamente un elemento h1 sono di colore blu e hanno un margine superiore 
+                            negativo di 10 pixel (sono cioè avvicinate all'elementi h1 che li precede)  </span></p>
+
+                </div></div>
+        </div>
+
+    </body>
+</html>

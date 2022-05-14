@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html >
+    <head>
+        <title>CSS display property</title>
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+        <meta charset="utf-8"/>
+
+        <style type="text/css">
+
+            a.noticevisit span {
+                display: none
+            }
+            a.noticevisit:visited span {
+                display: inline
+            }
+
+            a.visitme span {
+                display: none
+            }
+            a.visitme:hover span {
+                display: inline
+            }
+
+            .menu a {
+                color: white;
+                text-decoration: none;			
+            }
+
+            .menu {
+                width: 200px;
+                margin: 10px;
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 90%;
+                background-color: navy;
+                color: white;
+            }
+            .menu ul {
+                list-style: none;
+                padding:0;
+                margin:0;
+            }
+
+            .menu li {
+                margin:0;
+                margin-left: 10px;
+                margin-bottom: 2px;
+                padding:0;
+            }
+			
+            .menu ul li ul {
+                display: none;
+				border: 1px solid black;
+            }
+
+            .menu ul li:hover ul {
+                display: block; 
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 class="sezione">Uso della proprietà display</h1>
+
+        <h2 class="sezione">Mostrare dinamicamente elementi del documento</h2>
+
+        <div class="esempi">
+
+
+            <div class="esempio"><div class="rendering">
+                    <a class="visitme" href="pippo.html"><span>VISITALO! &gt;&gt;</span>questo link visualizza del testo quando è attraversato da mouse<span>&lt;&lt;</span></a>
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+                    <p>&lt;a class="visitme" href="pippo.html"&gt;&lt;span&gt;VISITALO! &amp;gt;&amp;gt;&lt;/span&gt;questo link visualizza del testo quando è attraversato da mouse&lt;span&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;/a&gt;</p>
+                    <h3>CSS</h3>
+                    <p>a.visitme span {
+                        display: none
+                        }<span class="commento">  gli span contenuti nei link di classe                             visitme non sono inizialmente visibili</span></p>
+                    <p>a.visitme:hover span {
+                        display: inline
+                        }<span class="commento">  gli span contenuti nei link di classe                             visitme divengono visibili quando il mouse passa sopra al link</span></p>
+
+                </div></div>
+
+            <div class="esempio"><div class="rendering">
+                    <p>Quello che segue è un semplicissimo menu CSS realizzato con link e liste. Passateci sopra il mouse...</p>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="#">Voce1</a>
+                                <ul>
+                                    <li>sottomenu1</li>
+                                    <li>
+                                        <a href="pippo.html">voce 1.1 </a>
+                                    </li>
+                                    <li>
+                                        <a href="pippo.html">voce 1.2 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Voce2</a>
+                                <ul>
+                                    <li>sottomenu2</li>
+                                    <li>
+                                        <a href="pippo.html">voce 2.1 </a>
+                                    </li>
+                                    <li>
+                                        <a href="pippo.html">voce 2.2 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><div class="sorgente">
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;menu&quot;&gt;</p>
+                    <p>	&lt;ul&gt;</p>
+                    <p>		&lt;li&gt;
+                        &lt;a href=&quot;#&quot;&gt;Voce1&lt;/a&gt;</p>
+                    <p>				&lt;ul&gt;</p>
+                    <p>					&lt;li&gt;sottomenu1&lt;/li&gt;</p>
+                    <p>					&lt;li&gt;                        &lt;a href=&quot;pippo.html&quot;&gt;voce 1.1 &lt;/a&gt;                        &lt;/li&gt;</p>
+                    <p>					&lt;li&gt;                        &lt;a href=&quot;pippo.html&quot;&gt;voce 1.2 &lt;/a&gt;                        &lt;/li&gt;</p>
+                    <p>				&lt;/ul&gt;</p>
+                    <p>		&lt;/li&gt;</p>
+                    <p>		&lt;li&gt;
+                        &lt;a href=&quot;#&quot;&gt;Voce2&lt;/a&gt;
+                        &lt;ul&gt;
+                        &lt;li&gt;sottomenu2&lt;/li&gt;
+                        &lt;li&gt;                        &lt;a href=&quot;pippo.html&quot;&gt;voce 2.1 &lt;/a&gt;                        &lt;/li&gt;
+                        &lt;li&gt;                        &lt;a href=&quot;pippo.html&quot;&gt;voce 2.2 &lt;/a&gt;                        &lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;/li&gt;</p>
+                    <p>&lt;/ul&gt;</p>
+                    <p>&lt;/div&gt;</p>
+
+
+                    <h3>CSS</h3>
+                    <p>.menu ul li ul {
+                        display: none;
+						border: 1px solid black;
+                        }<span class="commento">  le liste nidificate in altre liste all'interno dell'area del menu sono inizialmente invisibili </span></p>
+
+                    <p>.menu ul li:hover ul {
+                        display: block;                         
+                        }<span class="commento">  le liste nidificate in altre liste all'interno dell'area del menu divengono visibili quando si passa il mouse sull'elemento (li) che le contiene </span></p>
+
+                </div></div>
+        </div>	</body>
+</html>

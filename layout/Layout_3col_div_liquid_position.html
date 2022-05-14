@@ -1,0 +1,77 @@
+<!doctype html>
+<html >
+    <head>
+        <title>Layout di base: liquido a 3 colonne con DIV posizionate</title>	
+        <link rel="stylesheet" href="iw_examples.css" type="text/css"/>
+		<link rel="stylesheet" href="layouts.css" type="text/css"/>
+        <meta charset="utf-8"/>
+	
+<style type="text/css">
+		body,html {
+			position:relative;
+		}
+		
+		.header {
+			height:50px;
+		}
+
+		.body {
+			margin-left: 90px;
+			margin-right: 90px;
+			overflow:hidden;
+		}
+		
+		
+		.left {
+			position:absolute; 
+			top:50px; 
+			left:0; 
+			bottom:0;
+			width: 90px;
+			z-index: 10;
+		}
+		
+		.right {
+			position:absolute; 
+			top:50px; 
+			right:0; 
+			bottom:0;
+			width: 90px;
+			z-index: 10;
+		}
+
+		.footer {
+			margin-left: 90px;
+			margin-right: 90px;
+			height:30px;
+		}
+		
+	
+		
+		</style>
+	</head>
+	<body>
+	
+		
+		<div class="header">Header</div>
+		<div class="left">
+		<p>Left</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		</div>
+		<div class="right">
+		<p>Right</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		</div>
+		<div class="body">
+		
+		<p>Body</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		<p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+		
+		</div>
+		<div class="footer">Footer</div>
+		
+		
+	</body>
+</html>

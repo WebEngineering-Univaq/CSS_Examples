@@ -1,0 +1,471 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CSS Grids</title>
+        <link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+
+            .container {
+                background: lightgrey;
+                margin:10px; 
+                border: 1px solid black;
+            }
+
+            .cell {
+                background:blue; color: white;
+                border: 1px solid black;
+                margin: 5px; padding: 5px;
+            }
+
+            .c1 {
+                display: grid;
+                grid-template-columns: [c1 cinizio] auto [c2 c1fine] 50px [c3] 20px [c4] 40px [cfine];
+                grid-template-rows: [r1 rinizio] 25% [r2] 100px [r3] auto [rfine];
+                grid-template-areas: 
+                    "header header header header"
+                    "main main . sidebar"
+                    "footer footer footer footer";
+            }
+
+            .c1b {
+                grid-template-rows: auto;
+            }
+
+            .c2 {
+                display: grid;
+                grid-template: 
+                    [r1 rinizio] "header header header header" 25% 
+                    [r2] "main main . sidebar" 100px 
+                    [r3] "footer footer footer footer" auto [rend]
+                    / [c1 cinizio] auto [c2 c1fine] 50px [c3] 20px [c4] 40px [cfine];
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1 class="sezione">CSS Grids</h1>
+
+
+        <div class="esempi">
+
+
+
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container c1" style="  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+
+
+                    <div class="container c2" style="  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+                </div>
+                <div class="sorgente">
+
+
+                    <h3>CSS</h3>
+                    <p>						.c1 {
+                        display: grid;
+                        grid-template-columns: [c1 cinizio] auto [c2 c1fine] 50px [c3] 20px [c4] 40px [cfine];
+                        grid-template-rows: [r1 rinizio] 25% [r2] 100px [r3] auto [rfine];									</p>		
+
+
+                    <p>					grid-template-areas: 
+                        &quot;header header header header&quot;
+                        &quot;main main . sidebar&quot;
+                        &quot;footer footer footer footer&quot;;
+                        }
+                    </p>		
+
+                    <p>			.c2 {
+                        display: grid;
+                        grid-template: 
+                        [r1 rinizio] &quot;header header header header&quot; 25% 
+                        [r2] &quot;main main . sidebar&quot; 100px 
+                        [r3] &quot;footer footer footer footer&quot; auto [rend]
+                        / [c1 cinizio] auto [c2 c1fine] 50px [c3] 20px [c4] 40px [cfine];
+                        }					</p>
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;container c1&quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: gaps</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+
+                    <div class="container c2" style="grid-column-gap: 10px;  grid-row-gap: 20px;  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;container c2&quot; style=&quot;grid-column-gap: 10px;  grid-row-gap: 20px;  &quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: justify-items</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <h3>center</h3>
+
+                    <div class="container c2" style="justify-items: center  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+                    <h3>start</h3>
+
+                    <div class="container c2" style="justify-items: start  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+
+                    <h3>HTML</h3>
+
+                    <p>						&lt;div class=&quot;container c2&quot; style=&quot;justify-items: center  &quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;					</p>
+                    <p>						&lt;div class=&quot;container c2&quot; style=&quot;justify-items: start  &quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;					</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: align-items</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <h3>center</h3>
+
+                    <div class="container c2" style="align-items: center  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+                    <h3>start</h3>
+
+                    <div class="container c2" style="align-items: start  ">
+                        <div class="cell">C1 </div> 
+                        <div class="cell">C2 </div>
+                        <div class="cell">C3 </div>
+                        <div class="cell">C4 </div>
+                        <div class="cell">C5 </div>
+                        <div class="cell">C6 </div>
+                        <div class="cell">C7 </div>
+                        <div class="cell">C8 </div>
+                        <div class="cell">C9 </div>
+                        <div class="cell">C10 </div>
+                        <div class="cell">C11 </div>
+                        <div class="cell">C12 </div>
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+
+                    <h3>HTML</h3>
+                    <p>						&lt;div class=&quot;container c2&quot; style=&quot;align-items: center  &quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;					</p>
+                    <p>						&lt;div class=&quot;container c2&quot; style=&quot;align-items: start  &quot;&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C1 &lt;/div&gt; 
+                        &lt;div class=&quot;cell&quot;&gt;C2 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C3 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C4 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C5 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C6 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C7 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C8 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C9 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C10 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C11 &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot;&gt;C12 &lt;/div&gt;
+                        &lt;/div&gt;					</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: grid-column-start, grid-column-end, grid-row-start, grid-row-end</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-column-start: cinizio; grid-column-end: cfine">C1 </div> 
+                        <div class="cell" style="grid-column-start: c2; grid-column-end: c4; grid-row-start: r2; grid-row-end: rfine">C2 </div> 
+                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r2; grid-row-end: r3">C3 </div> 
+                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r3; grid-row-end: rfine">C4 </div> 
+
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+                    <h3>HTML</h3>
+
+                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-column-start: cinizio; grid-column-end: cfine&quot;&gt;C1 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-column-start: c2; grid-column-end: c4; grid-row-start: r2; grid-row-end: rfine&quot;&gt;C2 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-column-start: c4; grid-column-end: cfine; grid-row-start: r2; grid-row-end: r3&quot;&gt;C3 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-column-start: c4; grid-column-end: cfine; grid-row-start: r3; grid-row-end: rfine&quot;&gt;C4 &lt;/div&gt; </p>
+                    <p>					&lt;/div&gt;					</p>
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: grid-area</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-area: header">C-h </div> 
+                        <div class="cell" style="grid-area: main">C-m </div> 
+                        <div class="cell" style="grid-area: sidebar">C-s </div> 
+                        <div class="cell" style="grid-area: footer">C-f </div> 
+
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+
+                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-area: header&quot;&gt;C-h &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-area: main&quot;&gt;C-m &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-area: sidebar&quot;&gt;C-s &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;grid-area: footer&quot;&gt;C-f &lt;/div&gt; </p>
+                    <p>					&lt;/div&gt;</p>
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: justify-self</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-area: header">C-h </div> 
+                        <div class="cell" style="grid-area: main; justify-self: center">C-m </div> 
+                        <div class="cell" style="grid-area: sidebar">C-s </div> 
+                        <div class="cell" style="grid-area: footer">C-f </div> 
+
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+                    <h3>HTML</h3>
+
+                    <p>&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;	</p>
+                    <p>&lt;div class=&quot;cell&quot; style=&quot;grid-area: header&quot;&gt;C-h &lt;/div&gt; </p>
+                    <p>&lt;div class=&quot;cell&quot; style=&quot;grid-area: main; justify-self: center&quot;&gt;C-m &lt;/div&gt; </p>
+                    <p>&lt;div class=&quot;cell&quot; style=&quot;grid-area: sidebar&quot;&gt;C-s &lt;/div&gt; 	
+                        &lt;div class=&quot;cell&quot; style=&quot;grid-area: footer&quot;&gt;C-f &lt;/div&gt; </p>
+                    <p>	&lt;/div&gt;</p>
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: align-self</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-area: header">C-h </div> 
+                        <div class="cell" style="grid-area: main; align-self: center">C-m </div> 
+                        <div class="cell" style="grid-area: sidebar">C-s </div> 
+                        <div class="cell" style="grid-area: footer">C-f </div> 
+                    </div>
+                </div>
+
+                <div class="sorgente">
+                    <h3>HTML</h3>
+                    <p>&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
+                    <p>	&lt;div class=&quot;cell&quot; style=&quot;grid-area: header&quot;&gt;C-h &lt;/div&gt; </p>
+                    <p>&lt;div class=&quot;cell&quot; style=&quot;grid-area: main; align-self: center&quot;&gt;C-m &lt;/div&gt; </p>
+                    <p>&lt;div class=&quot;cell&quot; style=&quot;grid-area: sidebar&quot;&gt;C-s &lt;/div&gt;
+                        &lt;div class=&quot;cell&quot; style=&quot;grid-area: footer&quot;&gt;C-f &lt;/div&gt; </p>
+                    <p>&lt;/div&gt;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
