@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html>    
+	<head>
+		<title>CSS3: variabili (proprietà custom)</title>
+		<link rel="stylesheet" type="text/css" href="iw_examples.css"/>
+        <meta charset="utf-8"/>
+		<style type="text/css">
+		:root {
+			--my-font-weight: bold;	
+			--my-global-font-size: 25pt;
+		}
+		
+		.elemento1 {
+			--my-bk-color: cyan;
+			--my-fn-size: 20pt;
+		}
+		
+		.elemento1-1 {
+			background-color: var(--my-bk-color);
+			border: var(--my-border, 2px dashed blue);
+			
+		}
+		
+		.elemento1-2 {
+			background-color: var(--my-bk-color);
+			font-size:  var(--my-fn-size);
+			--my-border: 3px solid black;
+			--my-bk-color: purple;
+		}
+		
+		.elemento1-2-1 {
+			border: var(--my-border);
+			font-weight: var(--my-font-weight);
+			background-color: var(--my-bk-color);
+		}
+		
+		.elemento1-3 {
+			background-color: var(--my-bk-color);
+		}
+		
+		.elemento2 {
+			font-size: calc(var(--my-global-font-size) * 2);
+		}
+		</style>
+
+	</head>
+	<body>
+		<h1 class="sezione">CSS3: proprietà custom e variabili</h1>
+				
+		<p >Le proprietà custom di CSS, dette anche variabili, sono una caratteristica non ancora formalmente
+		approvata dallo standard (si veda <a href="https://www.w3.org/TR/css-variables-1/">https://www.w3.org/TR/css-variables-1/</a>), ma supportata ormai da tutti i browser aggiornati.</p>
+		
+		<div class="esempi">
+		<div class="esempio">		
+		<div class="rendering">		
+		<div class="elemento1">
+			ELEMENTO1
+				<p class="elemento1-1">ELEMENTO1-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				<div class="elemento1-2">
+				<p>ELEMENTO1-2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				<p  class="elemento1-2-1">ELEMENTO1-2-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+				</div>
+				<p  class="elemento1-3">ELEMENTO1-3, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</p>
+		
+		</div>		
+		</div>
+		
+		<div class="sorgente">	
+		<h3>CSS</h3>
+		
+		<p>	.elemento1 {
+			--my-bk-color: cyan;
+			--my-fn-size: 20pt;
+		}<span class="commento"> Le proprietà custom o <em>variabili</em> sono soggette alla cascata come quelle standard, quindi spesso si impostano su particolari elementi  perchè tutti i discendenti le possano sfruttare (richiamare).</span></p>
+		
+		
+		<p>	:root {
+			--my-font-weight: bold;		
+			--my-global-font-size: 25pt;
+		}<span class="commento"> Se vogliamo quindi variabili veramente globali, considerata la cascata dovremmo impostarle sull'elemento radice, cioè HTML. Tuttavia, spesso si preferisce usare lo speciale pseudo elemento :root, che ha una specificità ancora più alta.</span>		</p>
+		
+		<p>	.elemento1-1 {
+			background-color: var(--my-bk-color)<span class="commento"> La funzione var() permette di usare come valore di una proprietà quello di una variabile presente o ereditata dall'elemento </span>
+			border: var(--my-border, 2px dashed blue);<span class="commento"> Questa variabile non è definita nè ereditata da elemento1-1 (infatti è definita in elemento1-2) Quindi viene usato come valore della proprietà il secondo parametro di var(), che è a tutti gli effetti un valore di dafault </span>		}</p>
+		
+		<p>.elemento1-2 {
+			background-color: var(--my-bk-color);
+			font-size:  var(--my-fn-size);
+			--my-border: 3px solid black;	
+			--my-bk-color: purple;
+		}<span class="commento"> elemento1-2 eredita due variabili da elemento1, ne sovrascrive una (--my-bk-color) e ne definisce una nuova (--my-border).  </span></p>
+				
+		<p>.elemento1-2-1 {
+			border: var(--my-border);<span class="commento"> qui invece la proprietà --my-border è ereditata da .elemento1-2, quindi è disponibile </span>
+			font-weight: var(--my-font-weight);
+			background-color: var(--my-bk-color); <span class="commento"> qui il valore di --my-bk-color è quello sovrascritto ed ereditato da elemento1-2 </span>		}</p>
+		
+		<p>.elemento1-3 {
+			background-color: var(--my-bk-color); <span class="commento"> qui invece il valore di --my-bk-color è quello  ereditato da elemento1, in quanto siamo fuori da elemento1-2 (e quindi non influenzati dal valore sovrascritto) </span>}</p>		
+		
+		<h3>HTML</h3>
+		
+		<p>&lt;div class=&quot;elemento1&quot;&gt;</p>
+			ELEMENTO1
+		<p>		&lt;p class=&quot;elemento1-1&quot;&gt;ELEMENTO1-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;</p>
+		<p>		&lt;div class=&quot;elemento1-2&quot;&gt;
+		&lt;p&gt;ELEMENTO1-2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;		
+		&lt;p  class=&quot;elemento1-2-1&quot;&gt;ELEMENTO1-2-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
+		&lt;/div&gt;		</p>
+		<p>		&lt;p  class=&quot;elemento1-3&quot;&gt;ELEMENTO1-3, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;		</p>		
+		<p>&lt;/div&gt;		</p>			
+		</div>		
+		</div>
+		</div>
+		
+		
+		<h2 class="sezione">La funzione calc()</h2>
+		
+		<p>La funzione css calc() permette di eseguire operazioni aritmetiche di base su valori numerici direttamente nei fogli di stile.
+		Non è ancora formalmente approvata dallo standard (si veda <a href="https://www.w3.org/TR/css-values-4/#funcdef-calc">https://www.w3.org/TR/css-values-4/#funcdef-calc</a>), 
+		ma supportata ormai da tutti i browser aggiornati, anche se con alcune limitazioni.</p>
+		
+		
+		<div class="esempi">
+		<div class="esempio">		
+		<div class="rendering">		
+		
+		<div  class="elemento2">ELEMENTO2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla</div>
+		
+		</div>
+		
+		<div class="sorgente">
+		
+		<h3>HTML</h3>
+		
+		<p>&lt;div  class=&quot;elemento2&quot;&gt;ELEMENTO2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/div&gt;</p>
+		
+		<h3>CSS</h3>
+				
+		<p>:root {
+			--my-global-font-size: 25pt;
+		}</p>
+			
+		
+		<p>	.elemento2 {
+			font-size: calc(var(--my-global-font-size) * 2);
+		}<span class="commento"> Con la funzione calc() si possono effettuare operazioni sui valori (anche) delle variabili.</span></p>
+			
+		</div>		
+		</div>
+		</div>
+	</body>
+</html>
