@@ -57,19 +57,28 @@
 				
 				<div class="esempio"><div class="rendering">
 
-                    <div class="parentesizzato">ciao <span class="parentesizzato">ciao <span class="parentesizzato">ciao <span class="parentesizzato">ciao</span></span></span>
-					<span class="parentesizzato">ciao</span>			
+                    <div class="parentesizzato">ciao1 <span class="parentesizzato">ciao2 <span class="parentesizzato">ciao3 <span class="parentesizzato">ciao4</span></span></span>
+					<span class="parentesizzato">ciao5</span>			
 					</div>
 
                 </div><div class="sorgente">
                     <h3>HTML</h3>
-
-                    <p>&lt;div class=&quot;parentesizzato&quot;&gt;ciao 
-					&lt;span class=&quot;parentesizzato&quot;&gt;ciao 
-					&lt;span class=&quot;parentesizzato&quot;&gt;ciao 
-					&lt;span class=&quot;parentesizzato&quot;&gt;ciao&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</p>		
-					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao&lt;/span&gt;	</p>		
+<div class="block-container">	
+                    <p>&lt;div class=&quot;parentesizzato&quot;&gt;ciao1 </p>
+<div class="block-container">						
+					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao2 </p>
+<div class="block-container">						
+					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao3 </p>
+<div class="block-container">						
+					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao4&lt;/span&gt;</p>
+</div>					
+					<p>&lt;/span&gt;</p>
+</div>					
+					<p>&lt;/span&gt;</p>		
+					<p>&lt;span class=&quot;parentesizzato&quot;&gt;ciao5&lt;/span&gt;	</p>		
+</div>					
 					<p>&lt;/div&gt;</p>		
+</div>
 
                     <h3>CSS</h3>
                     <p>.parentesizzato:before {content: open-quote;}</p>

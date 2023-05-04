@@ -18,7 +18,7 @@
         <h1 class="sezione">Posizionamento assoluto</h1>
 
 
-        <h2 class="sezione">Situazione normale (posizionamento statico)</h2>
+        <h2 class="sezione">Situazione normale (Posizionamento statico)</h2>
 
 
         <div class="esempi">
@@ -43,7 +43,7 @@
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento assoluto relativo al documento</h2>
+        <h2 class="sezione">Posizionamento assoluto relativo al documento</h2>
 
         <div class="esempi">
 
@@ -65,14 +65,14 @@
                     </div>
                 </div><div class="sorgente">
 
-                    <p>&lt;div class="blocco" style="background: red;  position:absolute; top: 50px; left: 250px;"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>">;  <span style="font-weight: bold">position:absolute</span>; top: 50px; left: 250px;"&gt;
                         absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
                         &lt;/div&gt;<span class="commento">&lt;!-- Il blocco rosso è posizionato alle                             coordinate 50,250 rispetto al documento, in quanto non ha contenitori che                             offrano riferimenti validi. --&gt;</span></p>
 
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento assoluto relativo a un altro elemento</h2>
+        <h2 class="sezione">Posizionamento assoluto relativo a un altro elemento</h2>
 
         <div class="esempi">
 
@@ -96,14 +96,16 @@
 
                 </div><div class="sorgente">
 
-
-                    <p>&lt;div class="blocco" style="position:relative;"&gt;
-                        relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 </p>
-                    <p>&lt;div class="blocco" style="background: red;  position:absolute; top: 0px; left: 150px;"&gt;
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:blue; color: white">blue</span>; <span style="font-weight: bold">position:relative</span>;"&gt;</p>
+<div class="block-container">						
+                        <p>relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 </p>
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>">;  <span style="font-weight: bold">position:absolute</span>; top: 0px; left: 150px;"&gt;
                         absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 absolute 2 
                         &lt;/div&gt;</p>
-                    <p>&lt;/div&gt;<span class="commento">&lt;!-- In questo caso il blocco                             rosso è posizionato alle coordinate 150,0 rispetto al blocco blu che lo                             contiene e ha un posizionamento relativo (fittizio). --&gt;</span></p>
-
+</div>						
+                    <p>&lt;/div&gt;<span class="commento">&lt;!-- In questo caso il blocco                             rosso è posizionato alle coordinate 150,0 rispetto al blocco blu che lo                             contiene e ha un Posizionamento relativo (fittizio). --&gt;</span></p>
+</div>
                 </div></div>
 
 
@@ -125,12 +127,15 @@
 
                 </div><div class="sorgente">
 
-                    <p><span class="commento">&lt;!-- In questo esempio mostriamo                             come creare due colonne in un contenitore. Il contenitore blu, posizionato                             in maniera relativa, ospita una colonna gialla e una bianca. Questo effetto                             è alla base della realizzazione di molti layout --&gt;</span></p>
-                    <p>&lt;div class="blocco" style="background: blue; position:relative;"&gt;</p>
-                    <p>&lt;div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo posizionamento è assoluto. --&gt;</span></p>
-                    <p>&lt;div style="background: white;  margin-left: 40px; margin-top:5px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna                             destra è libera, quindi si adatterà alla larghezza del contenitore.                            La colonna non è posizionata, ma i suoi margini impediscono che si                             sovrapponga alla colonna di sinistra. In questo modo, è possibile ottenere                             uno pseudo-posizionamento che lascia libera la div di estendersi fino ai                             margini del contenitore. --&gt;</span></p>
+                    <p><span class="commento">&lt;!-- In questo esempio mostriamo come creare due colonne in un contenitore. Il contenitore blu, posizionato in maniera relativa, ospita una colonna gialla e una bianca. Questo effetto è alla base della realizzazione di molti layout --&gt;</span></p>
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:blue; color: white">blue</span>; <span style="font-weight: bold">position:relative</span>;"&gt;</p>
+<div class="block-container">						
+                    <p>&lt;div style="background: <span style="background-color:yellow;">yellow</span>;  <span style="font-weight: bold">position:absolute</span>; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo Posizionamento è assoluto. --&gt;</span></p>
+                    <p>&lt;div style="background: <span style="background-color:white;">white</span>;  margin-left: 40px; margin-top:5px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna                             destra è libera, quindi si adatterà alla larghezza del contenitore.                            La colonna non è posizionata, ma i suoi margini impediscono che si                             sovrapponga alla colonna di sinistra. In questo modo, è possibile ottenere                             uno pseudo-Posizionamento che lascia libera la div di estendersi fino ai                             margini del contenitore. --&gt;</span></p>
+</div>					
                     <p>&lt;/div&gt;</p>
-
+</div>
                 </div></div>
 
 
@@ -151,12 +156,14 @@
                     </div>
 
                 </div><div class="sorgente">
-
-                    <p>&lt;div class="blocco" style="background: blue; position:relative;"&gt;</p>
-                    <p>&lt;div style="background: yellow;  position:absolute; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo posizionamento è assoluto. --&gt;</span></p>
-                    <p>&lt;div style="background: white; position:absolute; top: 5px; left: 40px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- La colonna                             destra ha ampiezza libera, ed è posizionata anch'essa in maniera assoluta, imitando la posizione ottenuta nell'esempio precedente col margine.                            In questo caso, però, l'effetto ottenuto NON è quello voluto! Infatti, poichè abbiamo posizionato entrambi gli elementi contenuti nel blocco blu,                            quest'ultimo è stato svuotato e si è "compresso", facendo scivolare in alto il blocco verde...	--&gt;</span></p>
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:blue; color: white">blue</span>; <span style="font-weight: bold">position:relative</span>;"&gt;</p>
+<div class="block-container">						
+                    <p>&lt;div style="background: <span style="background-color:yellow;">yellow</span>;  <span style="font-weight: bold">position:absolute</span>; top: 5px; left: 5px; width: 30px;"&gt;abs&lt;/div&gt;<span class="commento">&lt;!-- L'ampiezza della colonna sinistra è fissata,                             e il suo Posizionamento è assoluto. --&gt;</span></p>
+                    <p>&lt;div style="background: <span style="background-color:white;">white</span>; <span style="font-weight: bold">position:absolute</span>; top: 5px; left: 40px;"&gt;blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo blocco di testo&lt;/div&gt;<span class="commento">&lt;!-- La colonna                             destra ha ampiezza libera, ed è posizionata anch'essa in maniera assoluta, imitando la posizione ottenuta nell'esempio precedente col margine.                            In questo caso, però, l'effetto ottenuto NON è quello voluto! Infatti, poichè abbiamo posizionato entrambi gli elementi contenuti nel blocco blu,                            quest'ultimo è stato svuotato e si è "compresso", facendo scivolare in alto il blocco verde...	--&gt;</span></p>
+</div>
                     <p>&lt;/div&gt;</p>
-
+</div>
                 </div></div>
 
 

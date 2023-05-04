@@ -17,7 +17,7 @@
 
         <h1 class="sezione">Posizionamento relativo</h1>
 
-        <h2 class="sezione" >Situazione normale (posizionamento statico)</h2>
+        <h2 class="sezione" >Situazione normale (Posizionamento statico)</h2>
 
         <div class="esempi">
 
@@ -45,7 +45,7 @@
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento relativo</h2>
+        <h2 class="sezione">Posizionamento relativo</h2>
 
         <div class="esempi">
 
@@ -68,14 +68,14 @@
                 </div><div class="sorgente">
 
 
-                    <p>&lt;div class="blocco" style="background: red; position:relative;"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;"&gt;
                         relative relative relative relative relative relative relative relative relative relative relative 
                         &lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento relativo, senza                             l'alterazione delle proprietà left, right, top, bottom è visivamente                             equivalente a quello static --&gt;</span></p>
 
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento relativo con specifica della proprietà top (positiva)</h2>
+        <h2 class="sezione">Posizionamento relativo con specifica della proprietà top (positiva)</h2>
 
         <div class="esempi">
 
@@ -97,7 +97,7 @@
                     </div>
                 </div><div class="sorgente">
 
-                    <p>&lt;div class="blocco" style="background: red; position:relative;top: 10px"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;top: 10px"&gt;
                         relative relative relative relative relative relative relative relative relative relative relative 
                         &lt;/div&gt;<span class="commento">&lt;!-- La proprietà top muove il blocco posizionato dieci pixel più in basso della sua posizione naturale. Notare che lo spazio occupato dall'oggetto resta bianco, e l'oggetto si sovrappone parzialmente a quello che lo segue.                            --&gt;</span></p>
 
@@ -105,7 +105,7 @@
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento relativo con specifica della proprietà top (negativa)</h2>
+        <h2 class="sezione">Posizionamento relativo con specifica della proprietà top (negativa)</h2>
 
         <div class="esempi">
 
@@ -127,14 +127,14 @@
                     </div>
                 </div><div class="sorgente">
 
-                    <p>&lt;div class="blocco" style="background: red; position:relative;top:-10px"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;top:-10px"&gt;
                         relative relative relative relative relative relative relative relative relative relative relative 
                         &lt;/div&gt;<span class="commento">&lt;!-- La proprietà negativa top muove il blocco posizionato dieci pixel più in alto della sua posizione naturale.                             --&gt;</span></p>
 
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento relativo con specifica della proprietà right</h2>
+        <h2 class="sezione">Posizionamento relativo con specifica della proprietà right</h2>
 
         <div class="esempi">
 
@@ -157,14 +157,14 @@
 
                 </div><div class="sorgente">
 
-                    <p>&lt;div class="blocco" style="background: red; position:relative;right: 10px"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;right: 10px"&gt;
                         relative relative relative relative relative relative relative relative relative relative relative 
                         &lt;/div&gt;<span class="commento">&lt;!-- La proprietà right muove il blocco posizionato dieci pixel più a sinistra della sua posizione naturale.                             --&gt;</span></p>
 
                 </div></div>
         </div>
 
-        <h2 class="sezione">posizionamento relativo di elementi nidificati</h2>
+        <h2 class="sezione">Posizionamento relativo di elementi nidificati</h2>
 
         <div class="esempi">
 
@@ -188,14 +188,16 @@
                         </div>
                     </div>
                 </div><div class="sorgente">
-
-                    <p>&lt;div class="blocco" style="background: red;"&gt;
-                        blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2</p>
-                    <p>&lt;div class="blocco" style="background: yellow; position:relative;right:10px;"&gt;
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>;"&gt;</p>
+<div class="block-container">						
+                        <p>blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2 blocco 2</p>
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:yellow">yellow</span>; <span style="font-weight: bold">position:relative</span>;right:10px;"&gt;
                         relative relative relative relative relative relative relative relative relative relative 
                         &lt;/div&gt;</p>
-                    <p>&lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento è relativo alla                             posizione calcolata per il contenitore --&gt;</span></p>
-
+</div>						
+                    <p>&lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento è relativo alla posizione calcolata per il contenitore --&gt;</span></p>
+</div>
                 </div></div>
 
             <div class="esempio"><div class="rendering">
@@ -217,14 +219,16 @@
                         </div>
                     </div>
                 </div><div class="sorgente">
-
-                    <p>&lt;div class="blocco" style="background: red; position:relative;right:10px;"&gt;
-                        relative relative relative relative relative relative relative relative relative relative relative </p>
-                    <p>&lt;div class="blocco" style="background: yellow; position:relative;right:10px;"&gt;
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;right:10px;"&gt;</p>
+<div class="block-container">						
+                        <p>relative relative relative relative relative relative relative relative relative relative relative </p>
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:yellow">yellow</span>; <span style="font-weight: bold">position:relative</span>;right:10px;"&gt;
                         relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 
                         &lt;/div&gt;</p>
+</div>						
                     <p>&lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento è relativo alla                             posizione calcolata per il contenitore: infatti in questo caso  il blocco                             giallo è dieci pixel più a sinistra della sua posizione nel blocco rosso,                             che a sua volta è dieci pixel più a sinistra della sua posizione naturale. --&gt;</span></p>
-
+</div>
                 </div></div>
 
             <div class="esempio"><div class="rendering">
@@ -246,14 +250,16 @@
                         </div>
                     </div>
                 </div><div class="sorgente">
-
-                    <p>&lt;div class="blocco" style="background: red; position:relative;right:10px;"&gt;
-                        relative relative relative relative relative relative relative relative relative relative relative </p>
-                    <p>&lt;div class="blocco" style="background: yellow; position:relative;bottom:50px;"&gt;
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold">position:relative</span>;right:10px;"&gt;</p>
+<div class="block-container">						
+                        <p>relative relative relative relative relative relative relative relative relative relative relative </p>
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:yellow">yellow</span>; <span style="font-weight: bold">position:relative</span>;bottom:50px;"&gt;
                         relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 relative 2 
                         &lt;/div&gt;</p>
+</div>						
                     <p>&lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento è relativo alla                             posizione calcolata per il contenitore: in questo caso il blocco giallo                             resta allineato nel contenitore posizionato, ma è spostato 50                             pixel più in alto --&gt;</span></p>
-
+</div>
                 </div></div>
         </div>
     </body>

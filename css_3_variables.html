@@ -100,16 +100,25 @@
 			background-color: var(--my-bk-color); <span class="commento"> qui invece il valore di --my-bk-color è quello  ereditato da elemento1, in quanto siamo fuori da elemento1-2 (e quindi non influenzati dal valore sovrascritto) </span>}</p>		
 		
 		<h3>HTML</h3>
-		
+<div class="block-container">											
 		<p>&lt;div class=&quot;elemento1&quot;&gt;</p>
+<div class="block-container">													
 			ELEMENTO1
 		<p>		&lt;p class=&quot;elemento1-1&quot;&gt;ELEMENTO1-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;</p>
-		<p>		&lt;div class=&quot;elemento1-2&quot;&gt;
-		&lt;p&gt;ELEMENTO1-2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;		
-		&lt;p  class=&quot;elemento1-2-1&quot;&gt;ELEMENTO1-2-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;
-		&lt;/div&gt;		</p>
+</div>		
+<div class="block-container">															
+		<p>		&lt;div class=&quot;elemento1-2&quot;&gt;</p>	
+<div class="block-container">													
+		<p>	&lt;p&gt;ELEMENTO1-2, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;		</p>
+		<p>&lt;p  class=&quot;elemento1-2-1&quot;&gt;ELEMENTO1-2-1, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;</p>	
+</div>		
+		<p>	&lt;/div&gt;		</p>
+</div>		
+<div class="block-container">			
 		<p>		&lt;p  class=&quot;elemento1-3&quot;&gt;ELEMENTO1-3, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla&lt;/p&gt;		</p>		
+</div>		
 		<p>&lt;/div&gt;		</p>			
+</div>		
 		</div>		
 		</div>
 		</div>

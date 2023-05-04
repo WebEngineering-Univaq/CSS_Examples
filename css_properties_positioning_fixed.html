@@ -65,7 +65,7 @@
                     </div>
                 </div><div class="sorgente">
 
-                    <p>&lt;div class="blocco" style="background: yellow;  position:fixed; top: 30px; left: 230px;"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:yellow">yellow</span>;  <span style="font-weight: bold"><span style="font-weight: bold">position:fixed</span></span>; top: 30px; left: 230px;"&gt;
                         fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
                         &lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento fixed, in 
                             realtà, è sempre relativo al viewport, quindi questo blocco giallo sarà fissato 
@@ -97,18 +97,20 @@
                         </div>
                     </div>
                 </div><div class="sorgente">
+<div class="block-container">	
+                    <p>&lt;div class="blocco" style="background: magenta; position:relative"&gt;</p>
+<div class="block-container">						
+                        <p>blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1</p>
 
-                    <p>&lt;div class="blocco" style="background: magenta; position:relative"&gt;
-                        blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1 blocco 1</p>
 
-
-                    <p>&lt;div class="blocco" style="background: red; position:fixed; top: 50px; left: 250px;"&gt;
+                    <p>&lt;div class="blocco" style="background: <span style="background-color:red; color: white">red</span>; <span style="font-weight: bold"><span style="font-weight: bold">position:fixed</span></span>; top: 50px; left: 250px;"&gt;
                         fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 fixed 2 
                         &lt;/div&gt;<span class="commento">&lt;!-- Il posizionamento fixed, in 
                             realtà, è sempre relativo al viewport, quindi questo blocco rosso sarà fissato 
                             alle coordinate 250,50 rispetto alla finestra del browser--&gt;</span></p>
+</div>
                     <p>&lt;/div&gt;</p>
-
+</div>
                 </div></div></div>
     </body>
 </html>

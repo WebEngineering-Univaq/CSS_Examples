@@ -26,34 +26,32 @@ h3 {
 }
 
 
-		.esempi { 	
-			 width: 99.5%; margin: auto;
-		}
+.esempi { 	
+	 width: 99.5%; margin: auto;
+}
 
-		.esempi .esempio { 	
-			display: flex; 			
-			flex-direction: row; 	
-			flex-wrap: nowrap; 
-			margin: 2px 0;
-			justify-content: space-between;
-			padding-top: 2px;
-			border-top: 2px solid #cdcdcd;
-		}
-		
-		.esempi .esempio:first-child { 	
-			padding-top: 0;
-			border-width: 0;
-		}
+.esempi .esempio { 	
+	display: flex; 			
+	flex-direction: row; 	
+	flex-wrap: nowrap; 
+	margin: 2px 0;
+	justify-content: space-between;
+	padding-top: 2px;
+	border-top: 2px solid #cdcdcd;
+}
 
-		.esempi .sorgente,.esempi .rendering {
-			flex-basis: 48.5%; 
-			max-width: 48.5%; 	
-			flex-grow: 1; 
-			flex-shrink: 0; 
-			padding: 0.5%;
-		} 
-		
-		
+.esempi .esempio:first-child { 	
+	padding-top: 0;
+	border-width: 0;
+}
+
+.esempi .sorgente,.esempi .rendering {
+	flex-basis: 48.5%; 
+	max-width: 48.5%; 	
+	flex-grow: 1; 
+	flex-shrink: 0; 
+	padding: 0.5%;
+} 
 
 .esempio .rendering {
 	border: 1px dashed #cdcdcd;
@@ -64,7 +62,6 @@ h3 {
 	font-family: courier;
 	background-color: #eee;
 }
-
 
 .esempio .sorgente p {
 	margin: 0;	
@@ -87,6 +84,7 @@ h3 {
 	background-color: yellow;
 	display: block;
 }
+
 .esempio .sorgente .commento:before {
 	content: "/*";
 }
@@ -96,4 +94,16 @@ h3 {
 
 .highlight {
 	background-color: yellow;
+}
+
+.block-container {
+	border-left: 1px dotted gray;
+}
+
+.block-container .block-container {
+	margin-left:1em; 
+}
+
+.block-container + .block-container {
+	margin-top: 1em;
 }
