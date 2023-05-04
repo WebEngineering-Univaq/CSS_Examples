@@ -45,7 +45,7 @@ h3 {
 	border-width: 0;
 }
 
-.esempi .sorgente,.esempi .rendering {
+.esempio .sorgente,.esempio .rendering {
 	flex-basis: 48.5%; 
 	max-width: 48.5%; 	
 	flex-grow: 1; 
@@ -69,7 +69,7 @@ h3 {
 	white-space: pre-line;
 }
 
-.esempio .sorgente p:hover { /*solo con Firefox! */
+.esempio .sorgente p:hover {
 	border: 1px dashed black;
 	background-color: white;
 	color: black;
