@@ -10,11 +10,13 @@
             p {margin:0}
             em {color: red}
             * {font-size: 12pt;}
+			input {border: 1px solid blue;}
 
             /* selettori di attributo */
             a[accesskey] {border-left: 2px solid #c0c0c0; border-top: 2px solid #c0c0c0; border-right: 2px solid #909090; border-bottom: 2px solid #909090; background: #f0f0f0; padding: 2px; }
             a[rel~=index] {font-style: italic;}
-            a[rel=index] {font-weight: bold;}
+            a[rel=index] {font-weight: bold;}			
+			input[type=password] {border-style: dotted;}
 
 
             /* selettori di classe  */
@@ -38,6 +40,10 @@
             /* pseudo elementi  */
             div.bigfirst:first-letter {font-size: 200%}
             div.bigfirst:first-line {font-size: 150%}
+			
+			a.special[href] {text-decoration: none; color:black;}
+			a.special[href]:after {content:"\1F517"}
+
 
             /* combinazioni  */
             .diffbold b {letter-spacing: 2px;}
@@ -57,17 +63,26 @@
                     <p>Test numero 1</p>
                     <p>Test numero 2</p>		
                     <p>Test numero 3 <em>con enfasi</em></p>
+					<p><input type="text" name="i" value="valore"/></p>
 
                 </div><div class="sorgente">                    <h3>HTML</h3>
 
                     <p>&lt;p&gt;Test numero 1&lt;/p&gt;</p>
                     <p>&lt;p&gt;Test numero 2&lt;/p&gt;</p>
                     <p>&lt;p&gt;Test numero 3 &lt;em&gt;con enfasi&lt;/em&gt;&lt;/p&gt;</p>
+					<p>&lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;i&quot; value=&quot;valore&quot;/&gt;&lt;/p&gt;</p>
+					
 
                     <h3>CSS</h3>
                     <p>p {margin:0} <span><span class="commento">  tutti i tag p non hanno margine  </span></span></p>
                     <p>em {color: red} <span class="commento">  tutti gli elementi em hanno testo rosso  </span></p>
                     <p>* {font-size: 10pt;} <span class="commento">  tutti gli elementi hanno testo da 10 punti </span></p>
+					<p>input {border: 1px solid blue;}  <span class="commento">  tutti gli input hanno un sottile bordo blu </span></p>
+
+
+
+           
+			
 
                 </div></div>
         </div>
@@ -87,6 +102,7 @@
                     <p><a href="pippo.html" accesskey="A">link con accesskey</a></p>		
                     <p><a rel="index contents">link con rel="contents index"</a></p>
                     <p><a rel="index">link con rel=index</a></p>
+					<p><input type="password" name="i" value="pass"/></p>
 
                 </div><div class="sorgente">
                     <h3>HTML</h3>
@@ -94,7 +110,7 @@
                     <p>		&lt;p&gt;&lt;a href=&quot;pippo.html&quot; accesskey=&quot;A&quot;&gt;link con accesskey&lt;/a&gt;&lt;/p&gt;</p>
                     <p>&lt;p&gt;&lt;a rel=&quot;index contents&quot;&gt;link con rel=&quot;contents index&quot;&lt;/a&gt;&lt;/p&gt;</p>
                     <p>	&lt;p&gt;&lt;a rel=&quot;index&quot;&gt;link con rel=index&lt;/a&gt;&lt;/p&gt;</p>
-
+					<p>&lt;p&gt;&lt;input type=&quot;password&quot; name=&quot;i&quot; value=&quot;pass&quot;/&gt;&lt;/p&gt;</p>
                    
 
                     <h3>CSS</h3>
@@ -103,7 +119,8 @@
                     <p>a[rel~=index] {font-style: italic;} <span class="commento">  tutti i tag a il cui attributo rel 
                             contiene index sono formattati in corsivo  </span></p>
                     <p>a[rel=index] {font-weight: bold;} <span class="commento">  tutti i tag a con attributo rel uguale a 
-                            index sono formattati in grassetto </span></p>
+                            index sono formattati in grassetto </span></p>							
+					<p>input[type=password] {border-style: dotted;}  <span class="commento">  tutti gli input password hanno un bordo puntinato (oltre che blu!) </span></p>
 
                 </div></div>
         </div>
@@ -214,6 +231,8 @@
                 </div></div>
         </div>
 
+<style>
+</style>
 
         <h2 class="sezione">Selettori di pseudo elemento</h2>
 
@@ -223,11 +242,15 @@
             <div class="esempio"><div class="rendering">
 
                     <div class="bigfirst">Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita</div>
+					
+					<a class="special" href="pippo.php">testo del link</a>
 
                 </div><div class="sorgente">
                     <h3>HTML</h3>
 
                     <p>&lt;div class=&quot;bigfirst&quot;&gt;Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita Testo con iniziale ingrandita&lt;/div&gt;</p>
+					
+					<p>&lt;a class=&quot;special&quot; href=&quot;pippo.php&quot;&gt;testo del link&lt;/a&gt;</p>
 
                     <h3>CSS</h3>
                     <p>div.bigfirst:first-letter {font-size: 200%} <span class="commento">  la prima lettera nelle 
@@ -235,7 +258,9 @@
                             normale  </span></p>
                     <p>div.bigfirst:first-line {font-size: 150%} <span class="commento">  la prima lettera nelle div di 
                             classe bigfirst ha una dimensione carattere che è 1,5 quella del testo normale 
-                             </span></p>
+                             </span></p>							 
+					<p>a.special {text-decoration: none; color:black;}<span class="commento"> i link di questa classe hanno lo stesso aspetto del testo normale... </span></p>
+					<p>a.special[href]:after {content:"\1F517"}<span class="commento"> ...ma DOPO di essi viene visualizzato il carattere UNICODE "link" </span></p>							 
 
                 </div></div>
         </div>
