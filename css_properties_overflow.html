@@ -101,6 +101,12 @@ necessaria a scorrerne il contenuto </span></p>
 		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 			</div>
 		</div>
+		
+		<div class="blocco" style="overflow: hidden; position: relative;">
+			<div style="position:absolute; top: -40px;">
+		A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+			</div>
+		</div>
 </div><div class="sorgente">
 				
 	<p>.blocco {border: 2px solid black; width: 20%; height: 100px; margin: 10px; float: left; overflow:hidden; position:relative}<span class="commento"> Il contenitore ha un'altezza fissata a 100 pixel. E il contenuto in eccesso viene nascosto. Si crea quindi una 
@@ -117,6 +123,16 @@ necessaria a scorrerne il contenuto </span></p>
 	rispetto al contenitore e può essere fatto scorrere variando la proprietà 
 	top via codice javascript, cambiando quindi la parte di testo visibile 
 	attraverso la &quot;finestra&quot;--&gt;</span></p>
+	</div>
+	
+	<div class="block-container">					
+	<p>			&lt;div class="blocco"&gt;</p>
+<div class="block-container">		
+	<p>		&lt;div style="position:absolute; top: -40px;"&gt;</p>
+	<p>	A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>	
+	<p>		&lt;/div&gt;</p>
+	</div>
+		<p>&lt;/div&gt; <span class="commento">&lt;!-- Vediamo qui cosa succede variando l'offset da -20 a -40... --&gt;</span></p>
 	</div>
 				
 		</div></div>
