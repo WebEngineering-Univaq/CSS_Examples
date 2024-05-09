@@ -140,6 +140,76 @@
 
             </div>
         </div>
+		
+		        <h2 class="sezione">Grids: grid-column-start, grid-column-end, grid-row-start, grid-row-end</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-column-start: cinizio; grid-column-end: cfine">C1 </div> 
+                        <div class="cell" style="grid-column-start: c2; grid-column-end: c4; grid-row-start: r2; grid-row-end: rfine">C2 </div> 
+                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r2; grid-row-end: r3">C3 </div> 
+                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r3; grid-row-end: rfine">C4 </div> 
+
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+
+                    <h3>HTML</h3>
+<div class="block-container">						
+                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
+<div class="block-container">						
+                        <p>&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: cinizio</span>; <span style="font-weight: bold">grid-column-end: cfine</span>&quot;&gt;C1 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c2</span>; <span style="font-weight: bold">grid-column-end: c4</span>; <span style="font-weight: bold">grid-row-start: r2</span>; <span style="font-weight: bold">grid-row-end: rfine</span>&quot;&gt;C2 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c4</span>; <span style="font-weight: bold">grid-column-end: cfine</span>; <span style="font-weight: bold">grid-row-start: r2</span>; <span style="font-weight: bold">grid-row-end: r3</span>&quot;&gt;C3 &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c4</span>; <span style="font-weight: bold">grid-column-end: cfine</span>; <span style="font-weight: bold">grid-row-start: r3</span>; <span style="font-weight: bold">grid-row-end: rfine</span>&quot;&gt;C4 &lt;/div&gt; </p> 
+</div>						
+                    <p>&lt;/div&gt;</p>
+</div>						
+
+                </div>
+
+            </div>
+        </div>
+        <h2 class="sezione">Grids: grid-area</h2>
+        <div class="esempi">
+
+            <div class="esempio">
+                <div class="rendering">
+
+
+                    <div class="container c2" style="">
+                        <div class="cell" style="grid-area: header">C-h </div> 
+                        <div class="cell" style="grid-area: main">C-m </div> 
+                        <div class="cell" style="grid-area: sidebar">C-s </div> 
+                        <div class="cell" style="grid-area: footer">C-f </div> 
+
+                    </div>
+
+                </div>
+                <div class="sorgente">
+
+                    <h3>HTML</h3>
+<div class="block-container">						
+                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
+<div class="block-container">						
+                        <p>&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: header</span>&quot;&gt;C-h &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: main</span>&quot;&gt;C-m &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: sidebar</span>&quot;&gt;C-s &lt;/div&gt; </p>
+                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: footer</span>&quot;&gt;C-f &lt;/div&gt;  </p>
+</div>						
+                    <p>&lt;/div&gt;</p>
+</div>						
+
+                </div>
+
+            </div>
+        </div>
+		
         <h2 class="sezione">Grids: gaps</h2>
         <div class="esempi">
 
@@ -368,74 +438,7 @@
 
             </div>
         </div>
-        <h2 class="sezione">Grids: grid-column-start, grid-column-end, grid-row-start, grid-row-end</h2>
-        <div class="esempi">
 
-            <div class="esempio">
-                <div class="rendering">
-
-                    <div class="container c2" style="">
-                        <div class="cell" style="grid-column-start: cinizio; grid-column-end: cfine">C1 </div> 
-                        <div class="cell" style="grid-column-start: c2; grid-column-end: c4; grid-row-start: r2; grid-row-end: rfine">C2 </div> 
-                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r2; grid-row-end: r3">C3 </div> 
-                        <div class="cell" style="grid-column-start: c4; grid-column-end: cfine; grid-row-start: r3; grid-row-end: rfine">C4 </div> 
-
-                    </div>
-
-                </div>
-                <div class="sorgente">
-
-
-                    <h3>HTML</h3>
-<div class="block-container">						
-                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
-<div class="block-container">						
-                        <p>&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: cinizio</span>; <span style="font-weight: bold">grid-column-end: cfine</span>&quot;&gt;C1 &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c2</span>; <span style="font-weight: bold">grid-column-end: c4</span>; <span style="font-weight: bold">grid-row-start: r2</span>; <span style="font-weight: bold">grid-row-end: rfine</span>&quot;&gt;C2 &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c4</span>; <span style="font-weight: bold">grid-column-end: cfine</span>; <span style="font-weight: bold">grid-row-start: r2</span>; <span style="font-weight: bold">grid-row-end: r3</span>&quot;&gt;C3 &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-column-start: c4</span>; <span style="font-weight: bold">grid-column-end: cfine</span>; <span style="font-weight: bold">grid-row-start: r3</span>; <span style="font-weight: bold">grid-row-end: rfine</span>&quot;&gt;C4 &lt;/div&gt; </p> 
-</div>						
-                    <p>&lt;/div&gt;</p>
-</div>						
-
-                </div>
-
-            </div>
-        </div>
-        <h2 class="sezione">Grids: grid-area</h2>
-        <div class="esempi">
-
-            <div class="esempio">
-                <div class="rendering">
-
-
-                    <div class="container c2" style="">
-                        <div class="cell" style="grid-area: header">C-h </div> 
-                        <div class="cell" style="grid-area: main">C-m </div> 
-                        <div class="cell" style="grid-area: sidebar">C-s </div> 
-                        <div class="cell" style="grid-area: footer">C-f </div> 
-
-                    </div>
-
-                </div>
-                <div class="sorgente">
-
-                    <h3>HTML</h3>
-<div class="block-container">						
-                    <p>					&lt;div class=&quot;container c2&quot; style=&quot;&quot;&gt;</p>
-<div class="block-container">						
-                        <p>&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: header</span>&quot;&gt;C-h &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: main</span>&quot;&gt;C-m &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: sidebar</span>&quot;&gt;C-s &lt;/div&gt; </p>
-                    <p>						&lt;div class=&quot;cell&quot; style=&quot;<span style="font-weight: bold">grid-area: footer</span>&quot;&gt;C-f &lt;/div&gt;  </p>
-</div>						
-                    <p>&lt;/div&gt;</p>
-</div>						
-
-                </div>
-
-            </div>
-        </div>
         <h2 class="sezione">Grids: justify-self</h2>
         <div class="esempi">
 
